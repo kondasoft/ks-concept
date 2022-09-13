@@ -1,0 +1,64 @@
+/*
+    © 2022 KondaSoft.com
+    https://www.kondasoft.com
+*/
+
+/*
+    Topbar
+*/
+#site-topbar.text-white a {
+    color: white;
+}
+
+#site-topbar.text-dark a {
+    color: var(--bs-dark);
+}
+
+#site-topbar p {
+    margin: 0;
+}
+
+
+/*
+    Mainmenu (desktop)
+*/
+ul#mainmenu-desktop .nav-item.level-3 {
+    font-size: 0.875em;
+}
+
+ul#mainmenu-desktop .nav-item.level-3 {
+}
+
+ul#mainmenu-desktop .dropdown.megamenu {
+    position: static;
+}
+
+ul#mainmenu-desktop .dropdown.megamenu .dropdown-menu {
+    width: 100%;
+    border: none;
+    box-shadow: 0 0.125rem .25rem rgba(0, 0, 0, .075);
+    margin: 0;
+    border-radius: 0;
+    justify-content: space-around;
+}
+
+ul#mainmenu-desktop .dropdown.megamenu ul.dropdown-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 .5rem;
+    width: 100%;
+    display: flex;
+}
+
+ul#mainmenu-desktop .dropdown.megamenu .nav-item {
+    width: 100%;
+}
+
+ul#mainmenu-desktop .dropdown.megamenu .dropdown-item {
+    border-radius: .25rem;
+}
+
+ul#mainmenu-desktop .dropdown.megamenu .level-2 > .dropdown-item {
+    font-weight: bold;
+    text-transform: uppercase;
+}

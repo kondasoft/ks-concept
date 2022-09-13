@@ -1,0 +1,33 @@
+{
+    "scripts": {
+        "watch": "npm-watch",
+        "scss": "sass --no-source-map --style=compressed media/templates/site/kondasoft/scss/bootstrap.scss:media/templates/site/kondasoft/css/vendor/bootstrap.min.css && postcss media/templates/site/kondasoft/css/vendor/bootstrap.min.css --replace --no-map --use autoprefixer"
+    },
+    "watch": {
+        "scss": {
+            "patterns": [
+                "media/templates/site/kondasoft/scss"
+            ],
+            "extensions": "scss",
+            "runOnChangeOnly": true
+        }
+    },
+    "dependencies": {
+        "bootstrap": "^5.2.1"
+    },
+    "devDependencies": {
+        "@types/bootstrap": "^5.2.4",
+        "autoprefixer": "^10.4.8",
+        "caniuse-lite": "^1.0.30001393",
+        "eslint": "^8.23.0",
+        "eslint-config-standard": "^17.0.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-n": "^15.2.5",
+        "eslint-plugin-promise": "^6.0.1",
+        "npm-watch": "^0.11.0",
+        "postcss": "^8.4.16",
+        "postcss-cli": "^10.0.0",
+        "postcss-minify": "^1.1.0",
+        "sass": "^1.54.9"
+    }
+}

@@ -1,0 +1,44 @@
+/*
+    © 2022 KondaSoft.com
+    https://www.kondasoft.com
+*/
+
+@use "sass:math";
+
+@import '../../../../../node_modules/bootstrap/scss/functions';
+
+/*
+    Variables
+*/
+$spacer:        1rem;
+$spacers: (
+    0: 0,
+    1: $spacer * 0.125,
+    2: $spacer * 0.25,
+    3: $spacer * 0.5,
+    4: $spacer * 0.75,
+    5: $spacer * 1,
+    6: $spacer * 1.25,
+    7: $spacer * 1.5,
+    8: $spacer * 1.75,
+    9: $spacer * 2,
+    10: $spacer * 2.5,
+    11: $spacer * 3,
+    12: $spacer * 4,
+    13: $spacer * 5,
+    14: $spacer * 6,
+    15: $spacer * 7,
+    16: $spacer * 8,
+    17: $spacer * 9,
+    18: $spacer * 10,
+    19: $spacer * 12,
+    20: $spacer * 14,
+);
+
+@import "../../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../../node_modules/bootstrap/scss/maps";
+@import "../../../../../node_modules/bootstrap/scss/mixins";
+@import "../../../../../node_modules/bootstrap/scss/root";
+
+
+@import '../../../../../node_modules/bootstrap/scss/bootstrap';

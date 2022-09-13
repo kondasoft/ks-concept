@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm watch",
+      "type": "shell",
+      "command": "npm run watch",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "group": "1"
+      },
+      "runOptions": { "runOn": "folderOpen" }
+    }
+  ]
+}

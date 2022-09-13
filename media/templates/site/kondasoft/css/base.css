@@ -1,0 +1,16 @@
+/*
+    © 2022 KondaSoft.com
+    https://www.kondasoft.com
+*/
+
+/* 
+    Dropdowns 
+*/
+.dropdown-menu.show:not([data-popper-placement]) {
+    animation: dropdown-fade-aninatiom .2s ease-out;
+}
+
+@keyframes dropdown-fade-aninatiom {
+    from { transform: translateY(.25rem); }
+    to { transform: translateY(0); }
+}
