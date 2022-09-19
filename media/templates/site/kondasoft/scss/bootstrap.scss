@@ -35,6 +35,25 @@ $spacers: (
     20: $spacer * 14,
 );
 
+$h1-font-size: 3rem;
+$h2-font-size: 2.5rem;
+$h3-font-size: 2rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 1.25rem;
+$h6-font-size: 1rem;
+
+$font-sizes: (
+    1: 2.5rem,
+    2: 2rem,
+    3: 1.5rem,
+    4: 1.25rem,
+    5: 1.125rem,
+    6: 1rem
+);
+
+$headings-font-family: var(--bs-headings-font-family);
+$headings-font-weight: var(--bs-headings-font-weight);
+
 @import "../../../../../node_modules/bootstrap/scss/variables";
 @import "../../../../../node_modules/bootstrap/scss/maps";
 @import "../../../../../node_modules/bootstrap/scss/mixins";

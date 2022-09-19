@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>mod_ks_carousel</name>
+	<author>KondaSoft</author>
+	<creationDate>2022-09</creationDate>
+	<copyright>(C) 2022 KondaSoft, Inc.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@kondasoft.com</authorEmail>
+	<authorUrl>www.kondasoft.com</authorUrl>
+	<version>1.0.0</version>
+	<description>KS Carousel Module</description>
+	<files>
+		<filename module="mod_ks_carousel">mod_ks_carousel.php</filename>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/mod_ks_carousel.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			<field type="spacer" name="spacer_general" label="&lt;b&gt;GENERAL&lt;/b&gt;" />
+				<field name="show_controls" type="radio" class="btn-group" label="Show controls" description="Prev/Next buttons" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="show_indicators" type="radio" class="btn-group" label="Show indicators" description="Small circles in the bottom" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="animation" type="list" label="Animation" description="Animation on slide change" default="slide">
+					<option value="slide">Slide</option>
+					<option value="slide carousel-fade">Fade</option>
+				</field>
+				<field name="autoplay" type="radio" class="btn-group" label="Autoplay" description="Automatically cycle slides (every 5 second)" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="carousel_style" type="list" label="Carousel Style" description="Dark variant is handy in case you images are mostly light" default="carousel-light">
+					<option value="carousel-light">Default</option>
+					<option value="carousel-dark">Dark</option>
+				</field>
+				<field type="spacer" name="spacer_images" label="&lt;b&gt;IMAGES&lt;/b&gt;" />
+				<field name="img_min_height" type="text" label="Image min-height (px)" description="Prevent the image from shrinking too much on smaller resolutions" default="400" />
+				<field name="loading" type="list" label="Loading" description="Lazy-load images. Do not lazy load if carousel is positioned above the fold" default="eager">
+					<option value="eager">Eager</option>
+					<option value="lazy">Lazy</option>
+				</field>
+				<field type="spacer" name="spacer_captions" label="&lt;b&gt;CAPTIONS&lt;/b&gt;" />
+				<field name="show_caption" type="radio" class="btn-group" label="Show caption" description="" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="caption_title_size" type="list" label="Title size" description="" default="h2">
+					<option value="h1">H1</option>
+					<option value="h2">H2</option>
+					<option value="h3">H3</option>
+					<option value="h4">H4</option>
+					<option value="h5">H5</option>
+					<option value="h6">H6</option>
+				</field>
+				<field name="caption_description_size" type="list" label="Description size" description="" default="fs-5">
+					<option value="fs-1">fs-1</option>
+					<option value="fs-2">fs-2</option>
+					<option value="fs-3">fs-3</option>
+					<option value="fs-4">fs-4</option>
+					<option value="fs-5">fs-5</option>
+					<option value="fs-6">fs-6</option>
+				</field>
+				<field name="caption_btn_1_color" type="list" label="Button 1 color" description="" default="btn-primary">
+					<option value="btn-primary">Primary</option>
+					<option value="btn-secondary">Secondary</option>
+					<option value="btn-secondary">Dark</option>
+					<option value="btn-success">Success</option>
+					<option value="btn-danger">Danger</option>
+					<option value="btn-warning">Warning</option>
+					<option value="btn-info">Info</option>
+				</field>
+				<field name="caption_btn_2_color" type="list" label="Button 2 color" description="" default="btn-secondary">
+					<option value="btn-primary">Primary</option>
+					<option value="btn-secondary">Secondary</option>
+					<option value="btn-secondary">Dark</option>
+					<option value="btn-success">Success</option>
+					<option value="btn-danger">Danger</option>
+					<option value="btn-warning">Warning</option>
+					<option value="btn-info">Info</option>
+				</field>
+				<field type="spacer" name="spacer_category" label="&lt;b&gt;CATEGORY&lt;/b&gt;" />
+				<field name="category" type="category" extension="com_content" label="Category" description="Articles within the selected category will be used as slides" />
+				<field name="limit" type="text" label="Limit" description="Limit the number of slides" default="3" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

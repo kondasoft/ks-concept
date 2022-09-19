@@ -15,7 +15,7 @@ $template = JFactory::getApplication()->getTemplate(true);
 
 <ul 
     id="mainmenu-desktop"
-    class="navbar-nav <?php echo $template->params->get('positions_navbar_menu_align', 'mx-auto')?> <?php echo $class_sfx ?>">
+    class="navbar-nav <?php echo $class_sfx ?>">
     <?php foreach ($list as $i => &$item) : ?>
         <?php // var_dump($item) ?>
         <?php if ($item->level == 1) : ?>
@@ -57,7 +57,7 @@ $template = JFactory::getApplication()->getTemplate(true);
                                                 <?php // var_dump($grandchild_item) ?>
                                                 <li class="nav-item level-3">
                                                     <a 
-                                                        class="dropdown-item <?php if ($grandchild_item->id == $active_id) : ?>active<?php endif ?>" 
+                                                        class="dropdown-item test <?php if ($grandchild_item->id == $active_id) : ?>active<?php endif ?>" 
                                                         href="<?php echo $grandchild_item->link ?>"
                                                         aria-current="<?php if ($grandchild_item->id == $active_id) : ?>page<?php endif ?>"
                                                         target="<?php if ($grandchild_item->browserNav) : ?>_blank<?php endif ?>">

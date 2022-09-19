@@ -1,6 +1,6 @@
 /*
     © 2022 KondaSoft.com
-    https://www.ecomgraduates.com
+    https://www.kondasoft.com
 */
 
 // Mainmenu desktop - various adjustments for the megamenu
