@@ -4,7 +4,7 @@ class JConfig {
 	public $offline_message = 'This site is down for maintenance.<br />Please check back again soon.';
 	public $display_offline_message = 1;
 	public $offline_image = '';
-	public $sitename = 'KondaSoft';
+	public $sitename = 'KS Concept';
 	public $editor = 'tinymce';
 	public $captcha = '0';
 	public $list_limit = 20;
@@ -16,7 +16,7 @@ class JConfig {
 	public $host = 'localhost';
 	public $user = 'root';
 	public $password = 'root';
-	public $db = 'kondasoft';
+	public $db = 'ks_concept';
 	public $dbprefix = 'bjtm7_';
 	public $dbencryption = 0;
 	public $dbsslverifyservercert = false;
