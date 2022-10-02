@@ -1,12 +1,12 @@
 {
     "scripts": {
         "watch": "npm-watch",
-        "scss": "sass --no-source-map --style=compressed media/templates/site/kondasoft/scss/bootstrap.scss:media/templates/site/kondasoft/css/vendor/bootstrap.min.css && postcss media/templates/site/kondasoft/css/vendor/bootstrap.min.css --replace --no-map --use autoprefixer"
+        "scss": "sass --no-source-map --style=compressed templates/ks-concept/assets/scss/bootstrap.scss:media/kondasoft/bootstrap/bootstrap.min.css && postcss media/kondasoft/bootstrap/bootstrap.min.css --replace --no-map --use autoprefixer"
     },
     "watch": {
         "scss": {
             "patterns": [
-                "media/templates/site/kondasoft/scss"
+                "templates/ks-concept/assets/scss/"
             ],
             "extensions": "scss",
             "runOnChangeOnly": true

@@ -11586,12 +11586,12 @@ meter {
   padding: 0;
   margin: 1em 0;
 }
-.pagenavigation .pagination li.next:only-child,
-.pager .pagination li.next:only-child {
+.pagenavigation .pagination .next:only-child,
+.pager .pagination .next:only-child {
   margin-left: auto;
 }
-[dir=rtl] .pagenavigation .pagination > li.next:only-child,
-[dir=rtl] .pager .pagination > li.next:only-child {
+[dir=rtl] .pagenavigation .pagination > .next:only-child,
+[dir=rtl] .pager .pagination > .next:only-child {
   margin-right: auto;
   margin-left: 1em;
 }

@@ -6,20 +6,6 @@
   "license": "GPL-2.0-or-later",
   "assets": [
     {
-      "name": "plg_multifactorauth_totp.setup.es5",
-      "type": "script",
-      "uri": "plg_multifactorauth_totp/setup-es5.min.js",
-      "dependencies": [
-        "qrcode",
-        "core"
-      ],
-      "attributes": {
-        "nomodule": true,
-        "defer": true
-      },
-      "version": "d10aab3ea0203b9bfe4e42987fbe5ec43bad0e08"
-    },
-    {
       "name": "plg_multifactorauth_totp.setup",
       "type": "script",
       "uri": "plg_multifactorauth_totp/setup.min.js",
@@ -32,6 +18,20 @@
         "type": "module"
       },
       "version": "2b8f6cd3dfca6a60578b16d9f955a13c267d04ba"
+    },
+    {
+      "name": "plg_multifactorauth_totp.setup.es5",
+      "type": "script",
+      "uri": "plg_multifactorauth_totp/setup-es5.min.js",
+      "dependencies": [
+        "qrcode",
+        "core"
+      ],
+      "attributes": {
+        "nomodule": true,
+        "defer": true
+      },
+      "version": "d10aab3ea0203b9bfe4e42987fbe5ec43bad0e08"
     }
   ]
 }

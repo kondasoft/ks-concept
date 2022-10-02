@@ -18,5 +18,6 @@ button[class*=plg_system_webauthn_login_button] img[class*=icon] {
   vertical-align: middle;
 }
 button[class*=plg_system_webauthn_login_button] span[class*=icon]:not(:last-child) {
-  margin-right: 0.5em;
+  -webkit-margin-end: 0.5em;
+          margin-inline-end: 0.5em;
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>mod_ks_marquee</name>
+	<author>KondaSoft</author>
+	<creationDate>2022-09</creationDate>
+	<copyright>(C) 2022 KondaSoft, Inc.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@kondasoft.com</authorEmail>
+	<authorUrl>www.kondasoft.com</authorUrl>
+	<version>1.0.0</version>
+	<description>Infinite scrolling text</description>
+	<files>
+		<filename module="mod_ks_marquee">mod_ks_marquee.php</filename>
+		<folder>css</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/mod_ks_marquee.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="text" type="textarea" label="Text" description="Comma separated list of words to scroll" default="Spectacular, Mind-blowing, Breathtaking, Eye-catching, Out of this world, magnificient" />
+				<field type="spacer" name="spacer_general" label="&lt;b&gt;GENERAL&lt;/b&gt;" />
+				<field name="bg_color" type="list" label="Background Color" description="" default="bg-dark text-white">
+					<option value="bg-white text-dark">White</option>
+					<option value="bg-light text-dark">Light</option>
+					<option value="bg-primary text-white">Primary</option>
+					<option value="bg-secondary text-white">Secondary</option>
+					<option value="bg-dark text-white">Dark</option>
+				</field>
+				<field name="font_weight" type="list" label="Font Weight" description="" default="fw-normal">
+					<option value="fw-normal">Normal</option>
+					<option value="fw-bold">Bold</option>
+				</field>
+				<field name="text_transform" type="list" label="Text Transform" description="" default="text-lowercase">
+					<option value="text-capitalize">Capitalize</option>
+					<option value="text-lowercase">Lowercase</option>
+					<option value="text-uppercase">Uppercase</option>
+				</field>
+				<field name="spacing" type="integer" label="Spacing" description="Padding top/bottom" first="0" last="5" step="1" default="3" />
+				<field name="list_label" type="text" label="List Label" description="Used for accessibiility purposes" default="Promotional Features" />
+				<field type="spacer" name="spacer_animation" label="&lt;b&gt;ANIMATION&lt;/b&gt;" />
+				<field name="animation_duration" type="text" label="Animation Duration" description="The higher the value the slower the animation will run." default="12s" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

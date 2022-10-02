@@ -50,6 +50,37 @@
       "version": "99134bf56c5d3e1b306552940bcc45e67151dca9"
     },
     {
+      "name": "com_menus.admin-item-edit-container",
+      "type": "script",
+      "uri": "com_menus/admin-item-edit_container.min.js",
+      "dependencies": [
+        "com_menus.admin-item-edit-container.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "71a53ab845064ffa0bc42d9840613537454876ec"
+    },
+    {
+      "name": "com_menus.admin-item-edit-modules",
+      "type": "style",
+      "uri": "com_menus/admin-item-edit_modules.min.css",
+      "version": "b36c320480c59a13dbbbf630e1532468e9479734"
+    },
+    {
+      "name": "com_menus.admin-item-edit-modules.es5",
+      "type": "script",
+      "uri": "com_menus/admin-item-edit_modules-es5.min.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "nomodule": true,
+        "defer": true
+      },
+      "version": "a4fb5e3c7dda4265aaf463a1e77732b8ce4e7c93"
+    },
+    {
       "name": "com_menus.admin-item-edit-modules",
       "type": "script",
       "uri": "com_menus/admin-item-edit_modules.min.js",
@@ -60,12 +91,6 @@
         "type": "module"
       },
       "version": "1c4025b6426f4abfc28c05e2b26b933368c6d2df"
-    },
-    {
-      "name": "com_menus.admin-item-edit-modules",
-      "type": "style",
-      "uri": "com_menus/admin-item-edit_modules.min.css",
-      "version": "b36c320480c59a13dbbbf630e1532468e9479734"
     },
     {
       "name": "com_menus.admin-item-modal.es5",
@@ -81,16 +106,16 @@
       "version": "8b8ab31c026e308b0ccd0089429fcaa9c52cf0ab"
     },
     {
-      "name": "com_menus.admin-item-edit-container",
+      "name": "com_menus.admin-item-modal",
       "type": "script",
-      "uri": "com_menus/admin-item-edit_container.min.js",
+      "uri": "com_menus/admin-item-modal.min.js",
       "dependencies": [
-        "com_menus.admin-item-edit-container.es5"
+        "com_menus.admin-item-modal.es5"
       ],
       "attributes": {
         "type": "module"
       },
-      "version": "71a53ab845064ffa0bc42d9840613537454876ec"
+      "version": "3fcc87fe7da835c581b82b02f865999619424be2"
     },
     {
       "name": "com_menus.admin-items-modal.es5",
@@ -131,16 +156,16 @@
       "version": "16065c94872301a22c8f12b4961c3077e37685f2"
     },
     {
-      "name": "com_menus.admin-item-modal",
+      "name": "com_menus.admin-menus",
       "type": "script",
-      "uri": "com_menus/admin-item-modal.min.js",
+      "uri": "com_menus/admin-menus-default.min.js",
       "dependencies": [
-        "com_menus.admin-item-modal.es5"
+        "com_menus.admin-menus.es5"
       ],
       "attributes": {
         "type": "module"
       },
-      "version": "3fcc87fe7da835c581b82b02f865999619424be2"
+      "version": "abcbc1912cdcfea136c0fc56437d5b7534ee9a3e"
     },
     {
       "name": "com_menus.batch-body.es5",
@@ -166,31 +191,6 @@
         "type": "module"
       },
       "version": "b30e22b8aff084622a6ca0d3a8d87b73b6f944d7"
-    },
-    {
-      "name": "com_menus.admin-menus",
-      "type": "script",
-      "uri": "com_menus/admin-menus-default.min.js",
-      "dependencies": [
-        "com_menus.admin-menus.es5"
-      ],
-      "attributes": {
-        "type": "module"
-      },
-      "version": "abcbc1912cdcfea136c0fc56437d5b7534ee9a3e"
-    },
-    {
-      "name": "com_menus.admin-item-edit-modules.es5",
-      "type": "script",
-      "uri": "com_menus/admin-item-edit_modules-es5.min.js",
-      "dependencies": [
-        "core"
-      ],
-      "attributes": {
-        "nomodule": true,
-        "defer": true
-      },
-      "version": "a4fb5e3c7dda4265aaf463a1e77732b8ce4e7c93"
     }
   ]
 }

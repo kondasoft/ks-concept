@@ -6,19 +6,6 @@
   "license": "GPL-2.0-or-later",
   "assets": [
     {
-      "name": "plg_multifactorauth_webauthn.webauthn.es5",
-      "type": "script",
-      "uri": "plg_multifactorauth_webauthn/webauthn-es5.min.js",
-      "dependencies": [
-        "core"
-      ],
-      "attributes": {
-        "nomodule": true,
-        "defer": true
-      },
-      "version": "8db62e5c9d39ca286ddfeeb8f35a066e2c255af7"
-    },
-    {
       "name": "plg_multifactorauth_webauthn.webauthn",
       "type": "script",
       "uri": "plg_multifactorauth_webauthn/webauthn.min.js",
@@ -30,6 +17,19 @@
         "defer": true
       },
       "version": "2ba7d17619cb8551832b33488b50aeed1592744f"
+    },
+    {
+      "name": "plg_multifactorauth_webauthn.webauthn.es5",
+      "type": "script",
+      "uri": "plg_multifactorauth_webauthn/webauthn-es5.min.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "nomodule": true,
+        "defer": true
+      },
+      "version": "8db62e5c9d39ca286ddfeeb8f35a066e2c255af7"
     }
   ]
 }

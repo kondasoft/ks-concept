@@ -12,18 +12,6 @@
       "version": "14a317b453ab6c6239bdc5546770103d260daa9d"
     },
     {
-      "name": "plg_system_jooa11y.jooa11y",
-      "type": "script",
-      "uri": "plg_system_jooa11y/jooa11y.min.js",
-      "dependencies": [
-        "plg_system_jooa11y.jooa11y-es5"
-      ],
-      "attributes": {
-        "type": "module"
-      },
-      "version": "f074d05fd550ed93fcc1256f8b545a3488fd55cc"
-    },
-    {
       "name": "plg_system_jooa11y.jooa11y-es5",
       "type": "script",
       "uri": "plg_system_jooa11y/jooa11y-es5.min.js",
@@ -35,6 +23,18 @@
         "nomodule": true
       },
       "version": "08840fe01f8b443dde963565913d0d9b99543e7c"
+    },
+    {
+      "name": "plg_system_jooa11y.jooa11y",
+      "type": "script",
+      "uri": "plg_system_jooa11y/jooa11y.min.js",
+      "dependencies": [
+        "plg_system_jooa11y.jooa11y-es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "f074d05fd550ed93fcc1256f8b545a3488fd55cc"
     }
   ]
 }

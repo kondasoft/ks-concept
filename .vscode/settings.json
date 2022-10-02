@@ -1,6 +1,6 @@
 {
     "css.styleSheets": [
-        "/media/templates/site/kondasoft/css/vendor/bootstrap.min.css"
+        "/media/templates/site/ks-concept/css/vendor/bootstrap.min.css"
     ],
     "search.exclude": {
     },

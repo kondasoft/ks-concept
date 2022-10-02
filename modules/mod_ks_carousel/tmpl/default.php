@@ -2,11 +2,11 @@
 
 /**
  * @package     KS Carousel
- * @subpackage  mod_ks_carousel
  *
  * @copyright   (C) 2022 KondaSoft, Inc. <https://www.kondasoft.com>
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
+
 
 defined('_JEXEC') or die;
 
@@ -23,9 +23,9 @@ $articles = $model->getItems();
 ?>
 
 <div
-    id="carousel-<?php echo $module->id; ?>"
+    id="ks-carousel-<?php echo $module->id; ?>"
     class="
-        carousel 
+        ks-carousel carousel enter-view
         <?php echo htmlspecialchars($params->get('animation', 'slide')) ?> 
         <?php echo htmlspecialchars($params->get('carousel_style', 'carousel-light')) ?> 
     "
@@ -35,7 +35,7 @@ $articles = $model->getItems();
             <?php foreach ($articles as $i => &$item) : ?>
                 <button 
                     type="button" 
-                    data-bs-target="#carousel-<?php echo $module->id; ?>" 
+                    data-bs-target="#ks-carousel-<?php echo $module->id; ?>" 
                     data-bs-slide-to="<?php echo $i ?>" 
                     class="<?php if ($i == 0) : ?>active<?php endif ?>" 
                     aria-current="<?php if ($i == 0) : ?>true<?php endif ?>"
@@ -72,36 +72,30 @@ $articles = $model->getItems();
                     style="min-height: <?php echo htmlspecialchars($params->get('img_min_height', '400')) ?>px; object-fit: cover;">
                 <?php if ($params->get('show_caption', 1)) : ?>
                     <div class="carousel-caption">
-                        <div class="animate__animated animate__faster animate__fadeInUp" style="animation-delay: 600ms">
-                            <h2 class="title mb-3 <?php echo htmlspecialchars($params->get('caption_title_size', 'h2')) ?>">
-                                <?php echo htmlspecialchars($item->title); ?>
-                            </h5>
-                        </div>
-                        <div class="animate__animated animate__faster animate__fadeInUp" style="animation-delay: 800ms">
-                            <div class="description mb-6 <?php echo htmlspecialchars($params->get('caption_description_size', 'fs-5')) ?>">
-                                <?php echo strip_tags($item->introtext, '<p><a>'); ?>
-                            </div>
+                        <h3 class="title mb-3 <?php echo htmlspecialchars($params->get('caption_title_size', 'h2')) ?>">
+                            <?php echo htmlspecialchars($item->title); ?>
+                        </h3>
+                        <div class="description mb-6 <?php echo htmlspecialchars($params->get('caption_description_size', 'fs-5')) ?>">
+                            <?php echo strip_tags($item->introtext, '<p><a><br><br/><strong>'); ?>
                         </div>
                         <?php if ($item_urls->urla || $item_urls->urlb) : ?>
-                            <div class="animate__animated animate__faster animate__zoomIn" style="animation-delay: 1000ms">
-                                <div class="d-flex justify-content-center mb-6">
-                                    <?php if ($item_urls->urla) : ?>
-                                        <a 
-                                            class="btn px-6 m-2 <?php echo htmlspecialchars($params->get('caption_btn_2_color', 'btn-primary') ) ?>" 
-                                            href="<?php echo htmlspecialchars($item_urls->urla) ?>"
-                                            target="<?php if ($item_urls->targeta == 1): ?>_blank<?php endif ?>">
-                                            <?php echo htmlspecialchars($item_urls->urlatext) ?>
-                                        </a>
-                                    <?php endif ?>
-                                    <?php if ($item_urls->urlb) : ?>
-                                        <a 
-                                            class="btn m-2 <?php echo htmlspecialchars($params->get('caption_btn_2_color', 'btn-secondary') ) ?>" 
-                                            href="<?php echo htmlspecialchars($item_urls->urlb) ?>"
-                                            target="<?php if ($item_urls->targetb == 1): ?>_blank<?php endif ?>">
-                                            <?php echo htmlspecialchars($item_urls->urlbtext) ?>
-                                        </a>
-                                    <?php endif ?>
-                                </div>
+                            <div class="btn-wrapper d-flex justify-content-center mb-6">
+                                <?php if ($item_urls->urla) : ?>
+                                    <a 
+                                        class="btn px-6 m-2 flex-shrink-0 <?php echo htmlspecialchars($params->get('caption_btn_1_color', 'btn-primary') ) ?>" 
+                                        href="<?php echo htmlspecialchars($item_urls->urla) ?>"
+                                        target="<?php if ($item_urls->targeta == 1): ?>_blank<?php endif ?>">
+                                        <?php echo htmlspecialchars($item_urls->urlatext) ?>
+                                    </a>
+                                <?php endif ?>
+                                <?php if ($item_urls->urlb) : ?>
+                                    <a 
+                                        class="btn m-2 flex-shrink-0 <?php echo htmlspecialchars($params->get('caption_btn_2_color', 'btn-secondary') ) ?>" 
+                                        href="<?php echo htmlspecialchars($item_urls->urlb) ?>"
+                                        target="<?php if ($item_urls->targetb == 1): ?>_blank<?php endif ?>">
+                                        <?php echo htmlspecialchars($item_urls->urlbtext) ?>
+                                    </a>
+                                <?php endif ?>
                             </div>
                         <?php endif ?>
                     </div>
@@ -113,7 +107,7 @@ $articles = $model->getItems();
         <button 
             class="carousel-control-prev" 
             type="button" 
-            data-bs-target="#carousel-<?php echo $module->id; ?>" 
+            data-bs-target="#ks-carousel-<?php echo $module->id; ?>" 
             data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden"><?php echo JText::_('MOD_KS_CAROUSEL_PREV') ?></span>
@@ -121,7 +115,7 @@ $articles = $model->getItems();
         <button 
             class="carousel-control-next" 
             type="button" 
-            data-bs-target="#carousel-<?php echo $module->id; ?>" 
+            data-bs-target="#ks-carousel-<?php echo $module->id; ?>" 
             data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden"><?php echo JText::_('MOD_KS_CAROUSEL_NEXT') ?></span>

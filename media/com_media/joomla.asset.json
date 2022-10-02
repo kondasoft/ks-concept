@@ -6,18 +6,6 @@
   "license": "GPL-2.0-or-later",
   "assets": [
     {
-      "name": "com_media.edit-images",
-      "type": "script",
-      "uri": "com_media/edit-images.min.js",
-      "dependencies": [
-        "com_media.edit-images.es5"
-      ],
-      "attributes": {
-        "type": "module"
-      },
-      "version": "76f6c3fd813f8cb32fa76ffd7934e5a385b31fdc"
-    },
-    {
       "name": "com_media.edit-images.es5",
       "type": "script",
       "uri": "com_media/edit-images-es5.min.js",
@@ -31,10 +19,22 @@
       "version": "117e12a508a88b37829ea657fc76280aadb9acb2"
     },
     {
+      "name": "com_media.edit-images",
+      "type": "script",
+      "uri": "com_media/edit-images.min.js",
+      "dependencies": [
+        "com_media.edit-images.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "76f6c3fd813f8cb32fa76ffd7934e5a385b31fdc"
+    },
+    {
       "name": "com_media.mediamanager",
       "type": "style",
       "uri": "com_media/media-manager.min.css",
-      "version": "1402e7b147fa39c6be67f2e274f1238d516e4df1"
+      "version": "fdd83ca391b0323efed166d8859c731e0b66133e"
     },
     {
       "name": "com_media.mediamanager",

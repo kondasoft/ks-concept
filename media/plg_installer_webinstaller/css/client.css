@@ -24,7 +24,8 @@
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, white 95%);
 }
 .com-apps-container .com-apps-sidebar .nav .nav {
-  padding-left: 15px;
+  -webkit-padding-start: 15px;
+          padding-inline-start: 15px;
 }
 .com-apps-container .com-apps-sidebar a:hover, .com-apps-container .com-apps-sidebar a.active {
   color: #fff;

@@ -628,6 +628,7 @@ html[dir=rtl] .infobar-leave-active {
 }
 .media-form joomla-tab-element > fieldset legend {
   float: left;
+  padding: 0;
 }
 .media-form .cropper-modal,
 .media-form .cropper-bg {
@@ -788,7 +789,7 @@ html[dir=rtl] .infobar-leave-active {
   box-shadow: none;
 }
 .media-toolbar-select-all {
-  width: 1rem;
+  width: 1.1rem;
   margin: 1rem;
 }
 

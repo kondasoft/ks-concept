@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>mod_ks_accordion</name>
+	<author>KondaSoft</author>
+	<creationDate>2022-09</creationDate>
+	<copyright>(C) 2022 KondaSoft, Inc.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@kondasoft.com</authorEmail>
+	<authorUrl>www.kondasoft.com</authorUrl>
+	<version>1.0.0</version>
+	<description>Accordion (F.A.Q) module</description>
+	<files>
+		<filename module="mod_ks_carousel">mod_ks_accordion.php</filename>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/mod_ks_accordion.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="spacer_general" type="spacer" label="&lt;b&gt;GENERAL&lt;/b&gt;" />
+				<field name="bg_color" type="color" label="Background Color" description="" default="#ffffff" />
+				<field name="accordion_style" type="list" label="Accordion Style" description="Select 'flush' if you prefer a cleaner styling." default="accordion-default">
+					<option value="accordion-default">Default</option>
+					<option value="accordion-flush">Flush</option>
+				</field>
+				<field name="max_width" type="text" label="Max-width (px)" description="Prevent the container from growing too large." default="600" />
+				<field name="title" type="text" label="Title" description="" default="Accordion (F.A.Q)" />
+				<field name="title_show" type="radio" class="btn-group" label="Show Title" description="" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="title_size" type="list" label="Title Size" description="" default="h2">
+					<option value="h1">H1</option>
+					<option value="h2">H2</option>
+					<option value="h3">H3</option>
+					<option value="h4">H4</option>
+					<option value="h5">H5</option>
+					<option value="h6">H6</option>
+				</field>
+				<field name="description" type="editor" filter="safehtml" label="Description" description="" default="&lt;p&gt;Write some optional description for this section.&lt;/p&gt;" />
+				<field name="description_show" type="radio" class="btn-group" label="Show Description" description="" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="description_size" type="list" label="Description Size" description="" default="fs-6">
+					<option value="fs-1">fs-1</option>
+					<option value="fs-2">fs-2</option>
+					<option value="fs-3">fs-3</option>
+					<option value="fs-4">fs-4</option>
+					<option value="fs-5">fs-5</option>
+					<option value="fs-6">fs-6</option>
+				</field>
+				<field type="spacer" name="spacer_category" label="&lt;b&gt;CATEGORY&lt;/b&gt;" />
+				<field name="category" type="category" extension="com_content" label="Category" description="Articles within the selected category will be used as accordion items" />
+				<field name="limit" type="text" label="Limit" description="Limit the number accordion items" default="10" />
+				<field name="spacer_spacing" type="spacer" label="&lt;b&gt;Spacing&lt;/b&gt;" />
+				<field name="padding_top" type="integer" label="Padding Top" description="" first="0" last="20" step="1" default="11" />
+				<field name="padding_bottom" type="integer" label="Padding Bottom" description="" first="0" last="20" step="1" default="11" />
+				<field name="margin_top" type="integer" label="Margin Top" description="" first="0" last="20" step="1" default="0" />
+				<field name="margin_bottom" type="integer" label="Margin Bottom" description="" first="0" last="20" step="1" default="0" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

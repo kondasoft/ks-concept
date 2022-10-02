@@ -14,6 +14,8 @@ module.exports = {
         indent: ['error', 4]
     },
     globals: {
-        bootstrap: 'readonly'
+        bootstrap: 'readonly',
+        enterView: 'readonly',
+        simpleParallax: 'readonly'
     }
 }

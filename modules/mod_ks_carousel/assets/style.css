@@ -1,0 +1,43 @@
+/*
+    © 2022 KondaSoft.com
+    https://www.kondasoft.com
+*/
+.ks-carousel {
+    position: relative;
+    background-color: var(--bs-dark);
+    color: white;
+}
+
+/* Animations */
+.ks-carousel.enter-view .title,
+.ks-carousel.enter-view .description {
+    transform: translate3d(0,100%,0);
+    opacity: 0;
+    transition: all .4s ease-out;
+}
+
+.ks-carousel.enter-view.entered .active .title,
+.ks-carousel.enter-view.entered .active .description {
+    transform: translateZ(0);
+    opacity: 1;
+}
+
+.ks-carousel.enter-view .title {
+    transition-delay: 400ms;
+}
+
+.ks-carousel.enter-view .description {
+    transition-delay: 600ms;
+}
+
+.ks-carousel.enter-view .btn-wrapper {
+    transform: scale3d(.3,.3,.3);
+    opacity: 0;
+    transition: all .4s ease-out;
+    transition-delay: 1000ms;
+}
+
+.ks-carousel.enter-view.entered .active .btn-wrapper {
+    transform: translateZ(0);
+    opacity: 1;
+}

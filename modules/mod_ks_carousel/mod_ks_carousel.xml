@@ -8,10 +8,9 @@
 	<authorEmail>info@kondasoft.com</authorEmail>
 	<authorUrl>www.kondasoft.com</authorUrl>
 	<version>1.0.0</version>
-	<description>KS Carousel Module</description>
+	<description>Image slider with captions powered by Bootstrap carousel</description>
 	<files>
 		<filename module="mod_ks_carousel">mod_ks_carousel.php</filename>
-		<folder>src</folder>
 		<folder>tmpl</folder>
 	</files>
 	<languages>
@@ -71,7 +70,7 @@
 				<field name="caption_btn_1_color" type="list" label="Button 1 color" description="" default="btn-primary">
 					<option value="btn-primary">Primary</option>
 					<option value="btn-secondary">Secondary</option>
-					<option value="btn-secondary">Dark</option>
+					<option value="btn-dark">Dark</option>
 					<option value="btn-success">Success</option>
 					<option value="btn-danger">Danger</option>
 					<option value="btn-warning">Warning</option>
@@ -80,7 +79,7 @@
 				<field name="caption_btn_2_color" type="list" label="Button 2 color" description="" default="btn-secondary">
 					<option value="btn-primary">Primary</option>
 					<option value="btn-secondary">Secondary</option>
-					<option value="btn-secondary">Dark</option>
+					<option value="btn-dark">Dark</option>
 					<option value="btn-success">Success</option>
 					<option value="btn-danger">Danger</option>
 					<option value="btn-warning">Warning</option>

@@ -31,18 +31,6 @@
       "version": "24a1d698f07cb48fbc6156d4b37f9dc66ecca639"
     },
     {
-      "name": "com_modules.admin-module-edit-assignment",
-      "type": "script",
-      "uri": "com_modules/admin-module-edit_assignment.min.js",
-      "dependencies": [
-        "com_modules.admin-module-edit-assignment.es5"
-      ],
-      "attributes": {
-        "type": "module"
-      },
-      "version": "bed88beff75743fba929e5acd60335263679dcf4"
-    },
-    {
       "name": "com_modules.admin-module-edit-assignment.es5",
       "type": "script",
       "uri": "com_modules/admin-module-edit_assignment-es5.min.js",
@@ -54,6 +42,18 @@
         "defer": true
       },
       "version": "8e1c4eca2354b006fffc5d00eaa44bba9738bac0"
+    },
+    {
+      "name": "com_modules.admin-module-edit-assignment",
+      "type": "script",
+      "uri": "com_modules/admin-module-edit_assignment.min.js",
+      "dependencies": [
+        "com_modules.admin-module-edit-assignment.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "bed88beff75743fba929e5acd60335263679dcf4"
     },
     {
       "name": "com_modules.admin-module-search.es5",

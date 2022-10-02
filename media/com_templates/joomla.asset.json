@@ -6,18 +6,6 @@
   "license": "GPL-2.0-or-later",
   "assets": [
     {
-      "name": "com_templates.admin-template-compare",
-      "type": "script",
-      "uri": "com_templates/admin-template-compare.min.js",
-      "dependencies": [
-        "com_templates.admin-template-compare.es5"
-      ],
-      "attributes": {
-        "type": "module"
-      },
-      "version": "22f26ac574bea945a0ac83e683f5391e730f7cc5"
-    },
-    {
       "name": "com_templates.admin-template-compare.es5",
       "type": "script",
       "uri": "com_templates/admin-template-compare-es5.min.js",
@@ -30,6 +18,18 @@
         "defer": true
       },
       "version": "9f718aaa18d4693e5c1ca24ebcc1a7ee659cb4ab"
+    },
+    {
+      "name": "com_templates.admin-template-compare",
+      "type": "script",
+      "uri": "com_templates/admin-template-compare.min.js",
+      "dependencies": [
+        "com_templates.admin-template-compare.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "22f26ac574bea945a0ac83e683f5391e730f7cc5"
     },
     {
       "name": "com_templates.admin-template-toggle-assignment.es5",
@@ -45,6 +45,18 @@
       "version": "05c5f45c0a6391f15d4df27da9f4d136090cc1a4"
     },
     {
+      "name": "com_templates.admin-template-toggle-assignment",
+      "type": "script",
+      "uri": "com_templates/admin-template-toggle-assignment.min.js",
+      "dependencies": [
+        "com_templates.admin-template-toggle-assignment.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "64349301646633757dc9092382b60b58d7e12d5c"
+    },
+    {
       "name": "com_templates.admin-template-toggle-switch.es5",
       "type": "script",
       "uri": "com_templates/admin-template-toggle-switch-es5.min.js",
@@ -56,18 +68,6 @@
         "defer": true
       },
       "version": "c848693feb7c555ef01d86d6c8d2b2b06ab78f96"
-    },
-    {
-      "name": "com_templates.admin-template-toggle-assignment",
-      "type": "script",
-      "uri": "com_templates/admin-template-toggle-assignment.min.js",
-      "dependencies": [
-        "com_templates.admin-template-toggle-assignment.es5"
-      ],
-      "attributes": {
-        "type": "module"
-      },
-      "version": "64349301646633757dc9092382b60b58d7e12d5c"
     },
     {
       "name": "com_templates.admin-template-toggle-switch",

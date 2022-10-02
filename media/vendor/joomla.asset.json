@@ -185,6 +185,13 @@
       "version": "3.3.2"
     },
     {
+      "name": "jquery",
+      "type": "script",
+      "uri": "vendor/jquery/jquery.min.js",
+      "package": "jquery",
+      "version": "3.6.0"
+    },
+    {
       "name": "webcomponent.joomla-alert",
       "type": "style",
       "uri": "vendor/joomla-custom-elements/joomla-alert.min.css",
@@ -251,13 +258,6 @@
       ],
       "package": "joomla-ui-custom-elements",
       "version": "0.2.0"
-    },
-    {
-      "name": "jquery",
-      "type": "script",
-      "uri": "vendor/jquery/jquery.min.js",
-      "package": "jquery",
-      "version": "3.6.0"
     },
     {
       "name": "minicolors",

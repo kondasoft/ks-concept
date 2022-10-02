@@ -1,0 +1,56 @@
+/*
+    © 2022 KondaSoft.com
+    https://www.kondasoft.com
+*/
+
+.ks-image-overlay-with-text {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bs-dark);
+    color: white;
+}
+
+.ks-image-overlay-with-text .img-mobile,
+.ks-image-overlay-with-text .img-desktop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.ks-image-overlay-with-text--inner {
+    position: relative;
+    text-align: center;
+}
+
+/* Animations */
+.ks-image-overlay-with-text.enter-view .title,
+.ks-image-overlay-with-text.enter-view .description {
+    transform: translate3d(0,100%,0);
+    opacity: 0;
+    transition: all .4s ease-out;
+}
+
+.ks-image-overlay-with-text.enter-view.entered .title,
+.ks-image-overlay-with-text.enter-view.entered .description {
+    transform: translateZ(0);
+    opacity: 1;
+}
+
+.ks-image-overlay-with-text.enter-view .description {
+    transition-delay: 200ms;
+}
+
+.ks-image-overlay-with-text.enter-view .btn {
+    transform: scale3d(.3,.3,.3);
+    opacity: 0;
+    transition: all .4s ease-out;
+    transition-delay: 400ms;
+}
+
+.ks-image-overlay-with-text.enter-view.entered .btn {
+    transform: translateZ(0);
+    opacity: 1;
+}

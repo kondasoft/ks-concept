@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>mod_ks_image_overlay_with_text</name>
+	<author>KondaSoft</author>
+	<creationDate>2022-09</creationDate>
+	<copyright>(C) 2022 KondaSoft, Inc.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@kondasoft.com</authorEmail>
+	<authorUrl>www.kondasoft.com</authorUrl>
+	<version>1.0.0</version>
+	<description>Full-width image with overlay text</description>
+	<files>
+		<filename module="mod_ks_carousel">mod_ks_image_overlay_with_text.php</filename>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/mod_ks_image_overlay_with_text.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="spacer_general" type="spacer" label="&lt;b&gt;GENERAL&lt;/b&gt;" />
+				<field name="max_width" type="text" label="Max-width (px)" description="Prevent the container from growing too large." default="600" />
+				<field name="spacer_image" type="spacer" label="&lt;b&gt;IMAGE&lt;/b&gt;" />
+				<field name="img_mobile" type="media" label="Image Mobile" description="" />
+				<field name="img_desktop" type="media" label="Image Desktop" description="" />
+				<field name="img_alt" type="text" label="Image ALT Text" description="For accessibility purposes" default="Sample placeholder image" />
+				<field name="img_opacity" type="integer" label="Image Opacity (%)" description="Decrease for more legible text" first="0" last="100" step="10" default="70" />
+				<field name="parallax_orientation" type="list" label="Parallax Orientation" description="This is the orientation (or direction) of the parallax effect." default="up">
+					<option value="up">Up</option>
+					<option value="right">Right</option>
+					<option value="down">Down</option>
+					<option value="left">Left</option>
+					<option value="up left">Up Left</option>
+					<option value="up right">Up Right</option>
+					<option value="down left">Down Left</option>
+					<option value="down right">Down Right</option>
+				</field>
+				<field name="parallax_scale" type="integer" label="Parallax Scale (%)" description="The higher the scale, the more visible the parallax effect will be." first="100" last="200" step="10" default="120" />
+				<field name="img_loading" type="list" label="Loading" description="Lazy-load images. Do not lazy load if the module is positioned above the fold" default="lazy">
+					<option value="eager">Eager</option>
+					<option value="lazy">Lazy</option>
+				</field>
+				<field name="spacer_text" type="spacer" label="&lt;b&gt;Text&lt;/b&gt;" />
+				<field name="title" type="text" label="Title" description="" default="Image Overlay With Text" />
+				<field name="title_show" type="radio" class="btn-group" label="Show Title" description="" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="title_size" type="list" label="Title Size" description="" default="h2">
+					<option value="h1">H1</option>
+					<option value="h2">H2</option>
+					<option value="h3">H3</option>
+					<option value="h4">H4</option>
+					<option value="h5">H5</option>
+					<option value="h6">H6</option>
+				</field>
+				<field name="description" type="editor" filter="safehtml" label="Description" description="" default="&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur risus nulla. Proin molestie et dui nec pharetra. In sed volutpat velit. Cras sodales suscipit neque venenatis porttitor. Aenean eget mattis orci, vitae imperdiet enim.&lt;/p&gt;" />
+				<field name="description_show" type="radio" class="btn-group" label="Show Description" description="" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="description_size" type="list" label="Description Size" description="" default="fs-6">
+					<option value="fs-1">fs-1</option>
+					<option value="fs-2">fs-2</option>
+					<option value="fs-3">fs-3</option>
+					<option value="fs-4">fs-4</option>
+					<option value="fs-5">fs-5</option>
+					<option value="fs-6">fs-6</option>
+				</field>
+				<field name="spacer_button" type="spacer" label="&lt;b&gt;Button&lt;/b&gt;" />
+				<field name="btn_text" type="text" label="Button text" description="" default="Learn more" />
+				<field name="btn_show" type="radio" class="btn-group" label="Show Button" description="" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="btn_url" type="url" label="Button URL" description="" default="#" />
+				<field name="btn_color" type="list" label="Button Color" description="" default="btn-primary">
+					<option value="btn-primary">Primary</option>
+					<option value="btn-secondary">Secondary</option>
+					<option value="btn-dark">Dark</option>
+					<option value="btn-success">Success</option>
+					<option value="btn-danger">Danger</option>
+					<option value="btn-warning">Warning</option>
+					<option value="btn-info">Info</option>
+				</field>
+				<field name="spacer_spacing" type="spacer" label="&lt;b&gt;Spacing&lt;/b&gt;" />
+				<field name="padding_top" type="integer" label="Padding Top" description="" first="0" last="20" step="1" default="11" />
+				<field name="padding_bottom" type="integer" label="Padding Bottom" description="" first="0" last="20" step="1" default="11" />
+				<field name="margin_top" type="integer" label="Margin Top" description="" first="0" last="20" step="1" default="0" />
+				<field name="margin_bottom" type="integer" label="Margin Bottom" description="" first="0" last="20" step="1" default="0" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
