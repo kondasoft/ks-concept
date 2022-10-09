@@ -12,6 +12,11 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Helper\ModuleHelper;
 
+$wa = $app->getDocument()->getWebAssetManager();
+
+$wa->registerAndUseStyle('bootstrap', 'media/kondasoft/bootstrap/bootstrap.min.css');
+$wa->registerAndUseScript('bootstrap', 'media/kondasoft/bootstrap/bootstrap.bundle.min.js', [], ['defer' => 'defer']);
+
 JFactory::getDocument()->addStyleSheet(JURI::root(true). '/modules/mod_ks_carousel/assets/style.css');
 
 require ModuleHelper::getLayoutPath('mod_ks_carousel', $params->get('layout', 'default'));

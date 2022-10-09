@@ -34,11 +34,13 @@ $pageclass  = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : ''
 $template_path  = 'templates/' . $app->getTemplate();
 
 
-// Vendor Stylesheets/Javascript
-$wa->registerAndUseStyle('bootstrap', '/media/kondasoft/bootstrap/bootstrap.min.css');
-$wa->registerAndUseStyle('animate.css', '/media/kondasoft/animate-css/animate.min.css');
-$wa->registerAndUseScript('bootstrap','/media/kondasoft/bootstrap/bootstrap.bundle.min.js', [], ['defer' => 'defer']);
-$wa->registerAndUseScript('enter-view', '/media/kondasoft/enter-view/enter-view.min.js', [], ['defer' => 'defer']);
+// Vendor Stylesheets
+$wa->registerAndUseStyle('bootstrap', 'media/kondasoft/bootstrap/bootstrap.min.css');
+$wa->registerAndUseStyle('animate.css', 'media/kondasoft/animate-css/animate.min.css');
+
+// Vendor JavaScript
+$wa->registerAndUseScript('bootstrap', 'media/kondasoft/bootstrap/bootstrap.bundle.min.js', [], ['defer' => 'defer']);
+$wa->registerAndUseScript('enter-view', 'media/kondasoft/enter-view/enter-view.min.js', [], ['defer' => 'defer']);
 
 // Template CSS variables
 require_once($template_path . '/assets/css/variables.php');
@@ -183,22 +185,36 @@ $this->getPreloadManager()->preconnect('https://fonts.gstatic.com/', []);
         </div>
     </nav>
 
-    <jdoc:include type="modules" name="main-top" style="none" />
-    <jdoc:include type="message" />
-
     <main id="site-main" role="main">
-        <jdoc:include type="component" />
+        <jdoc:include type="message" />
+        <jdoc:include type="modules" name="main-top" style="none" />
+        <?php if ($this->params->get('layout_general_hide_homepage_component', 1) === 0) : ?>
+            <jdoc:include type="component" />
+        <?php endif ?>
+        <jdoc:include type="modules" name="main-bottom" style="none" />
     </main>
-
-    <jdoc:include type="modules" name="main-bottom" style="none" />
     
-    <?php if ($this->countModules('footer', true)) : ?>
-        <footer class="container-footer footer full-width">
-            <div class="grid-child">
-                <jdoc:include type="modules" name="footer" style="none" />
+    <footer 
+        id="site-footer"
+        class="
+            <?php echo htmlspecialchars($this->params->get('layout_footer_bg_color', 'bg-dark text-white')) ?> 
+            <?php echo 'pt-' . htmlspecialchars($this->params->get('layout_footer_spacing_top', '10')) ?>
+        ">
+        <div class="container">
+            <div class="row">
+                <jdoc:include type="modules" name="footer" style="footer" />
             </div>
-        </footer>
-    <?php endif; ?>
+            <hr>
+            <div id="site-copyright">
+                <p>
+                    &copy; <?php echo date("Y"); ?> <?php echo $sitename; ?>. <?php echo JText::_('TPL_KS_CONCEPT_ALL_RIGHTS_RESERVED') ?>
+                </p>
+                <p class="opacity-50">
+                    <?php echo JText::_('TPL_KS_CONCEPT_FOOTER_CREDITS') ?>
+                </p>
+            </div>
+        </div>
+    </footer>
 
     <?php require_once($template_path . '/includes/offcanvas-menu.php'); ?>
 

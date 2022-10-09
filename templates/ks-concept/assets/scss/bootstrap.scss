@@ -5,7 +5,7 @@
 
 @use "sass:math";
 
-@import '../../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/functions';
 
 /*
     Variables
@@ -51,13 +51,14 @@ $font-sizes: (
     6: 1rem
 );
 
-$headings-font-family: var(--bs-headings-font-family);
-$headings-font-weight: var(--bs-headings-font-weight);
+$headings-font-family:          var(--bs-headings-font-family);
+$headings-font-weight:          var(--bs-headings-font-weight);
+$enable-negative-margins:       true;
 
-@import "../../../../../node_modules/bootstrap/scss/variables";
-@import "../../../../../node_modules/bootstrap/scss/maps";
-@import "../../../../../node_modules/bootstrap/scss/mixins";
-@import "../../../../../node_modules/bootstrap/scss/root";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/maps";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+@import "../../../../node_modules/bootstrap/scss/root";
 
 
-@import '../../../../../node_modules/bootstrap/scss/bootstrap';
+@import '../../../../node_modules/bootstrap/scss/bootstrap';

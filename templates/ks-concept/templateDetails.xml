@@ -74,6 +74,12 @@
 			</fieldset>
 			<!-- Layout -->
 			<fieldset name="layout" label="Layout" description="">
+				<fieldset name="layout_general" label="General">
+					<field name="layout_general_hide_homepage_component" type="radio" class="btn-group" label="Hide Homepage Component" description="Useful if you plan to adjust the homepage only with modules" default="1">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+				</fieldset>
 				<fieldset name="layout_topbar" label="Topbar">
 					<field name="layout_topbar_bg_color" type="list" label="Background Color" description="" default="bg-primary text-white">
 						<option value="bg-white text-dark">White</option>
@@ -118,6 +124,16 @@
 						<option value="btn-info">Info</option>
 					</field>
 					<field name="layout_navbar_spacing" type="integer" label="Spacing" description="Padding top/bottom" first="0" last="5" step="1" default="3" />
+				</fieldset>
+				<fieldset name="layout_footer" label="Footer">
+					<field name="layout_footer_bg_color" type="list" label="Background Color" description="" default="bg-dark text-white">
+						<option value="bg-white text-dark">White</option>
+						<option value="bg-light text-dark">Light</option>
+						<option value="bg-primary text-white">Primary</option>
+						<option value="bg-secondary text-white">Secondary</option>
+						<option value="bg-dark text-white">Dark</option>
+					</field>
+					<field name="layout_footer_spacing_top" type="integer" label="Spacing Top" description="Padding top only" first="0" last="12" step="1" default="10" />
 				</fieldset>
 				<fieldset name="layout_offcanvas_menu" label="Offcanvas menu">
 				<field name="layout_offcanvas_menu_width" type="text" label="Width (px)" description="" default="300" />

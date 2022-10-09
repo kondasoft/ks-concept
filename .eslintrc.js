@@ -16,6 +16,7 @@ module.exports = {
     globals: {
         bootstrap: 'readonly',
         enterView: 'readonly',
-        simpleParallax: 'readonly'
+        simpleParallax: 'readonly',
+        Splide: 'readonly'
     }
 }

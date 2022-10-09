@@ -1,0 +1,79 @@
+/*
+    © 2022 KondaSoft.com
+    https://www.kondasoft.com
+*/
+
+.item-description p:last-child {
+    margin-bottom: 0;
+}
+
+/* Splide */
+.ks-slider .splide {
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.ks-slider .splide__arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: white;
+    opacity: 1;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075)
+}
+
+.ks-slider .splide__arrow:disabled {
+    cursor: default;
+}
+
+.ks-slider .splide__arrow--prev {
+    left: -.5rem;
+}
+.ks-slider .splide__arrow--next {
+    right: -.5rem;
+}
+
+.ks-slider .splide__arrow svg {
+    transition: all .2s ease-out;
+}
+
+.ks-slider .splide__arrow:disabled svg {
+    opacity: .25;
+}
+
+.ks-slider .splide__arrow--prev:hover svg {
+    transform: scaleX(-1) translateX(2px);
+}
+
+.ks-slider .splide__arrow--next:hover svg {
+    transform: translateX(2px);
+}
+
+.ks-slider .splide__pagination {
+    position: relative;
+    margin-top: 1rem;
+    top: auto;
+    bottom: auto;
+}
+
+.ks-slider .splide__pagination__page {
+    background-color: black;
+    opacity: .25;
+}
+
+.ks-slider .splide__pagination__page.is-active {
+    opacity: .75;
+    background-color: var(--bs-primary);
+}
+
+@media (min-width: 576px) {
+    .ks-slider .splide {
+        padding-left: 0;
+        padding-right: 0;
+    }    
+    .ks-slider .splide__arrow--prev {
+        left: -1rem;
+    }
+    .ks-slider .splide__arrow--next {
+        right: -1rem;
+    }
+}

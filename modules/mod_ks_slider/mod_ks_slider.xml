@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>mod_ks_slider</name>
+	<author>KondaSoft</author>
+	<creationDate>2022-09</creationDate>
+	<copyright>(C) 2022 KondaSoft, Inc.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@kondasoft.com</authorEmail>
+	<authorUrl>www.kondasoft.com</authorUrl>
+	<version>1.0.0</version>
+	<description>Slider Joomla Module to show Articles</description>
+	<files>
+		<filename module="mod_ks_slider">mod_ks_slier.php</filename>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/mod_ks_slider.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="spacer_general" type="spacer" label="&lt;b&gt;GENERAL&lt;/b&gt;" />
+				<field name="bg_color" type="color" label="Background Color" description="" default="#ffffff" />
+				<field name="container" type="list" label="Container" description="" default="container">
+					<option value="container-fluid">Fluid</option>
+					<option value="container">Container</option>
+				</field>
+				<field name="title" type="text" label="Title" description="" default="Latest Articles" />
+				<field name="title_show" type="radio" class="btn-group" label="Show Title" description="" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="title_size" type="list" label="Title Size" description="" default="h2">
+					<option value="h1">H1</option>
+					<option value="h2">H2</option>
+					<option value="h3">H3</option>
+					<option value="h4">H4</option>
+					<option value="h5">H5</option>
+					<option value="h6">H6</option>
+				</field>
+				<field name="description" type="editor" filter="safehtml" label="Description" description="" default="&lt;p&gt;Write some optional description for this section.&lt;/p&gt;" />
+				<field name="description_show" type="radio" class="btn-group" label="Show Description" description="" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="description_size" type="list" label="Description Size" description="" default="fs-6">
+					<option value="fs-1">fs-1</option>
+					<option value="fs-2">fs-2</option>
+					<option value="fs-3">fs-3</option>
+					<option value="fs-4">fs-4</option>
+					<option value="fs-5">fs-5</option>
+					<option value="fs-6">fs-6</option>
+				</field>
+				<field type="spacer" name="spacer_category" label="&lt;b&gt;CATEGORY&lt;/b&gt;" />
+				<field name="category" type="category" extension="com_content" label="Category" description="Articles within the selected category will be used as accordion items" />
+				<field name="limit" type="text" label="Limit" description="Limit the number accordion items" default="10" />
+				<field name="spacer_slider" type="spacer" label="&lt;b&gt;Slider&lt;/b&gt;" />
+				<field name="slider_arrows" type="radio" class="btn-group" label="Show Arrows" description="Prev/Next buttons" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="slider_pagination" type="radio" class="btn-group" label="Show Pagination" description="Small dots at the end" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="slider_easing" type="text" label="Easing" description="Learn more - https://cubic-bezier.com" default="cubic-bezier(.42,.65,.27,.99)" />
+				<field name="slider_speed" type="text" label="Speed (ms)" description="Transition speed in milliseconds." default="500" />
+				<field name="slider_autoplay" type="radio" class="btn-group" label="Autoplay" description="" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="slider_interval" type="text" label="Interval (ms)" description="The autoplay interval duration in milliseconds." default="5000" />
+				<field name="slider_rewind" type="radio" class="btn-group" label="Rewind" description="Determines whether to rewind the carousel or not." default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field type="spacer" name="spacer_item" label="&lt;b&gt;Item&lt;/b&gt;" />
+				<field name="item_card" type="radio" class="btn-group" label="Style as Card" description="" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="item_img_show" type="radio" class="btn-group" label="Show Image" description="" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="img_border" type="list" label="Image Border" description="Does not apply in the card style" default="img-thumbnail">
+					<option value="">Square</option>
+					<option value="rounded">Rounded</option>
+					<option value="img-thumbnail">Thumbnail</option>
+				</field>
+				<field name="item_title_show" type="radio" class="btn-group" label="Show Title" description="" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="item_title_size" type="list" label="Title Size" description="" default="h5">
+					<option value="h1">H1</option>
+					<option value="h2">H2</option>
+					<option value="h3">H3</option>
+					<option value="h4">H4</option>
+					<option value="h5">H5</option>
+					<option value="h6">H6</option>
+				</field>
+				<field name="item_description_show" type="radio" class="btn-group" label="Show Description" description="" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="item_description_size" type="list" label="Description Size" description="" default="fs-6">
+					<option value="fs-1">fs-1</option>
+					<option value="fs-2">fs-2</option>
+					<option value="fs-3">fs-3</option>
+					<option value="fs-4">fs-4</option>
+					<option value="fs-5">fs-5</option>
+					<option value="fs-6">fs-6</option>
+				</field>
+				<field name="item_btn_show" type="radio" class="btn-group" label="Show Button" description="" default="1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="item_btn_color" type="list" label="Button color" description="" default="btn-primary">
+					<option value="btn-primary">Primary</option>
+					<option value="btn-secondary">Secondary</option>
+					<option value="btn-dark">Dark</option>
+					<option value="btn-success">Success</option>
+					<option value="btn-danger">Danger</option>
+					<option value="btn-warning">Warning</option>
+					<option value="btn-info">Info</option>
+				</field>
+				<field name="spacer_breakpoints" type="spacer" label="&lt;b&gt;Breakpoints&lt;/b&gt;" />
+				<field name="breakpoint_xs" type="integer" label="XS (&lt;576px)" description="" first="1" last="3" step="1" default="1" />
+				<field name="breakpoint_sm" type="integer" label="SM (≥576px)" description="" first="1" last="6" step="1" default="2" />
+				<field name="breakpoint_md" type="integer" label="MD (≥768px)" description="" first="1" last="6" step="1" default="3" />
+				<field name="breakpoint_lg" type="integer" label="LG (≥992px)" description="" first="1" last="6" step="1" default="3" />
+				<field name="breakpoint_xl" type="integer" label="XL (≥1200px)" description="" first="1" last="8" step="1" default="4" />
+				<field name="breakpoint_xxl" type="integer" label="XXL (≥1400px)" description="" first="1" last="8" step="1" default="4" />
+				<field name="spacer_spacing" type="spacer" label="&lt;b&gt;Spacing&lt;/b&gt;" />
+				<field name="padding_top" type="integer" label="Padding Top" description="" first="0" last="20" step="1" default="11" />
+				<field name="padding_bottom" type="integer" label="Padding Bottom" description="" first="0" last="20" step="1" default="11" />
+				<field name="margin_top" type="integer" label="Margin Top" description="" first="0" last="20" step="1" default="0" />
+				<field name="margin_bottom" type="integer" label="Margin Bottom" description="" first="0" last="20" step="1" default="0" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

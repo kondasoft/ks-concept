@@ -14,7 +14,7 @@ use Joomla\CMS\Helper\ModuleHelper;
 
 $wa = $app->getDocument()->getWebAssetManager();
 
-$wa->registerAndUseScript('simpleParallax','/media/kondasoft/simple-parallax/simpleParallax.min.js', [], ['defer' => 'defer']);
+$wa->registerAndUseScript('simpleParallax', 'media/kondasoft/simple-parallax/simpleParallax.min.js', [], ['defer' => 'defer']);
 
 JFactory::getDocument()->addStyleSheet(JURI::root(true). '/modules/mod_ks_image_overlay_with_text/assets/style.css');
 JFactory::getDocument()->addScript(JURI::root(true). '/modules/mod_ks_image_overlay_with_text/assets/script.js',  [], ['defer' => 'defer']);

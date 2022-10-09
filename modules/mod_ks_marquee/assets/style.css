@@ -10,6 +10,10 @@
     animation-iteration-count: infinite;
 }
 
+.ks-marquee ul:hover {
+    animation-play-state: paused;
+}
+
 .ks-marquee ul li {
     position: relative;
     flex-shrink: 0;
