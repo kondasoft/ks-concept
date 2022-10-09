@@ -2,7 +2,7 @@
 Joomla Template powered by Boostrap (v5) framework and 15+ years of coding experience.
 
 # Demo
-[httsp://ks-concept.joomla.com](httsp://ks-concept.joomla.com)
+https://ks-concept.joomla.com]
 
 # Note
 Currently work in progress. Within the end of Octber 2022 should be expected a stable release.
