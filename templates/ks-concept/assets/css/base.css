@@ -112,6 +112,10 @@
     animation: dropdown-fade-aninatiom .2s ease-out;
 }
 
+.dropdown-item {
+    transition: all .2s ease-out;
+}
+
 @keyframes dropdown-fade-aninatiom {
     from { transform: translateY(.25rem); }
     to { transform: translateY(0); }

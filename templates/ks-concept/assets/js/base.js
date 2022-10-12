@@ -25,13 +25,15 @@ window.debounce = (callback, wait = 200) => {
 }
 
 // Enter view detection
-enterView({
-    selector: '.enter-view',
-    enter: (el) => {
-        el.classList.add('entered')
-    },
-    exit: (el) => { },
-    progress: (el, progress) => { },
-    offset: 0.4,
-    once: true
-})
+if (document.querySelector('.enter-view')) {
+    enterView({
+        selector: '.enter-view',
+        enter: (el) => {
+            el.classList.add('entered')
+        },
+        exit: (el) => { },
+        progress: (el, progress) => { },
+        offset: 0.4,
+        once: true
+    })
+}

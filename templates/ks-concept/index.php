@@ -30,6 +30,7 @@ $task       = $app->input->getCmd('task', '');
 $itemid     = $app->input->getCmd('Itemid', '');
 $sitename   = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 $menu       = $app->getMenu()->getActive();
+$lang       = $app->getLanguage();
 $pageclass  = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 $template_path  = 'templates/' . $app->getTemplate();
 
@@ -48,11 +49,14 @@ require_once($template_path . '/assets/css/variables.php');
 // Template Stylesheets
 HTMLHelper::stylesheet($template_path . '/assets/css/base.css');
 HTMLHelper::stylesheet($template_path . '/assets/css/layout.css');
+HTMLHelper::stylesheet($template_path . '/assets/css/joomla.css');
+HTMLHelper::stylesheet($template_path . '/assets/css/custom.css');
 
 // Template Javascript
 HTMLHelper::script($template_path . '/assets/js/base.js', [], ['defer' => 'defer']);
 HTMLHelper::script($template_path . '/assets/js/smart-search.js', [], ['defer' => 'defer']);
 HTMLHelper::script($template_path . '/assets/js/layout.js', [], ['defer' => 'defer']);
+HTMLHelper::script($template_path . '/assets/js/custom.js', [], ['defer' => 'defer']);
 
 // Google Fonts
 $headingsFontFamily = htmlspecialchars(preg_replace('/\s+/', '+' , $this->params->get('general_typography_headings_font_family', 'Roboto')));
@@ -91,7 +95,7 @@ $this->getPreloadManager()->preconnect('https://fonts.gstatic.com/', []);
         <?php echo $itemid ? ' itemid-' . $itemid : '' ?>
         <?php echo $pageclass ? ' ' . $pageclass : '' ?>
     ">
-
+    
     <!-- Skip to content (accessibility) -->
     <a class="visually-hidden-focusable" href="#site-main">
         <?php echo JText::_('TPL_KS_CONCEPT_ACCESSIBILITY_SKIP_TO_CONTENT') ?>
@@ -188,8 +192,16 @@ $this->getPreloadManager()->preconnect('https://fonts.gstatic.com/', []);
     <main id="site-main" role="main">
         <jdoc:include type="message" />
         <jdoc:include type="modules" name="main-top" style="none" />
-        <?php if ($this->params->get('layout_general_hide_homepage_component', 1) === 0) : ?>
-            <jdoc:include type="component" />
+        <?php if ($menu == $app->getMenu()->getDefault($lang->getTag())) :?>
+            <?php if ($this->params->get('layout_general_hide_homepage_component', 1) === 0) : ?>
+                <div class="container py-10">
+                    <jdoc:include type="component" />
+                </div>
+            <?php endif ?>
+        <?php else : ?>
+            <div class="container py-10">
+                <jdoc:include type="component" />
+            </div>
         <?php endif ?>
         <jdoc:include type="modules" name="main-bottom" style="none" />
     </main>
