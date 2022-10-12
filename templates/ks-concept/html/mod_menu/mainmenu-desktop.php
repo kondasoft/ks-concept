@@ -49,7 +49,7 @@ $template = JFactory::getApplication()->getTemplate(true);
                                 <?php // var_dump($child_item) ?>
                                 <li class="nav-item level-2">
                                     <?php if ($child_item->type == 'separator') : ?>
-                                        <!-- <hr class="dropdown-divider"> -->
+                                        <hr class="dropdown-divider">
                                     <?php else : ?>
                                         <a 
                                             class="
