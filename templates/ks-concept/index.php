@@ -190,19 +190,22 @@ $this->getPreloadManager()->preconnect('https://fonts.gstatic.com/', []);
     </nav>
 
     <main id="site-main" role="main">
-        <jdoc:include type="message" />
         <jdoc:include type="modules" name="main-top" style="none" />
-        <?php if ($menu == $app->getMenu()->getDefault($lang->getTag())) :?>
-            <?php if ($this->params->get('layout_general_hide_homepage_component', 1) === 0) : ?>
+        
+            <?php if ($menu == $app->getMenu()->getDefault($lang->getTag())) :?>
+                <?php if ($this->params->get('layout_general_hide_homepage_component', 1) === 0) : ?>
+                    <div class="container py-10">
+                        <jdoc:include type="component" />
+                    </div>
+                <?php else : ?>
+                    <jdoc:include type="message" />
+                <?php endif ?>
+            <?php else : ?>
                 <div class="container py-10">
                     <jdoc:include type="component" />
                 </div>
             <?php endif ?>
-        <?php else : ?>
-            <div class="container py-10">
-                <jdoc:include type="component" />
-            </div>
-        <?php endif ?>
+
         <jdoc:include type="modules" name="main-bottom" style="none" />
     </main>
     

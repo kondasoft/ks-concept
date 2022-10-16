@@ -21,7 +21,9 @@
 /*
     Various classes
 */
-
+.item-description p:last-child {
+    margin-bottom: 0;
+}
 
 
 /*
@@ -132,4 +134,13 @@
     --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
     --bs-accordion-active-color: var(--bs-primary);
     --bs-accordion-active-bg: var(--bs-light);
+}
+
+
+/*
+    Pagination 
+*/
+.pagination {
+    --bs-pagination-active-bg: var(--bs-primary);
+    --bs-pagination-active-border-color: var(--bs-primary);
 }

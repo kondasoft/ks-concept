@@ -24,7 +24,7 @@ $moduleAttribs          = [];
 $moduleAttribs['class'] = $module->position . ' footer-mod ' . htmlspecialchars($params->get('moduleclass_sfx', ''), ENT_QUOTES, 'UTF-8');
 $headerTag              = htmlspecialchars($params->get('header_tag', 'h3'), ENT_QUOTES, 'UTF-8');
 $headerAttribs          = [];
-$headerAttribs['class'] = 'd-none d-lg-block ' . htmlspecialchars($params->get('header_class', ''), ENT_QUOTES, 'UTF-8');
+$headerAttribs['class'] = 'mod-title d-none d-lg-block ' . htmlspecialchars($params->get('header_class', ''), ENT_QUOTES, 'UTF-8');
 
 ?>
 

@@ -203,6 +203,32 @@ ul#mainmenu-desktop .dropdown.megamenu .level-2 > .dropdown-item {
     margin: 1.75rem 0;
 }
 
+#site-footer .mod-title {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+#site-footer .mod-title::after {
+    content: "";
+    width: 32px;
+    height: 1px;
+    position: absolute;
+    bottom: -.75rem;
+    left: 0;
+}
+
+#site-footer.text-white .mod-title::after {
+    background-color: rgba(255, 255, 255, .5);
+}
+
+#site-footer.text-dark .mod-title::after {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#site-footer .mod-custom {
+    font-size: .9rem;
+}
+
 #site-footer .nav {
     flex-direction: column;
 }
@@ -211,6 +237,7 @@ ul#mainmenu-desktop .dropdown.megamenu .level-2 > .dropdown-item {
     text-decoration: none;
     padding: .25rem 0;
     transition: all .2s ease-out;
+    font-size: .9rem;
 }
 
 #site-footer.text-white .nav-link {
@@ -219,6 +246,11 @@ ul#mainmenu-desktop .dropdown.megamenu .level-2 > .dropdown-item {
 
 #site-footer.text-white .nav-link:hover {
     opacity: .75;
+}
+
+#site-footer .nav-link [class^="icon-"] {
+    width: 18px;
+    height: 18px;
 }
 
 #site-footer .accordion-button {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" client="site" method="upgrade">
-	<name>mod_ks_slider</name>
+	<name>mod_ks_cards</name>
 	<author>KondaSoft</author>
 	<creationDate>2022-09</creationDate>
 	<copyright>(C) 2022 KondaSoft, Inc.</copyright>
@@ -8,13 +8,13 @@
 	<authorEmail>info@kondasoft.com</authorEmail>
 	<authorUrl>www.kondasoft.com</authorUrl>
 	<version>1.0.0</version>
-	<description>Slider Joomla Module to show Articles</description>
+	<description>Simple Cards Joomla Module</description>
 	<files>
-		<filename module="mod_ks_slider">mod_ks_slier.php</filename>
+		<filename module="mod_ks_slider">mod_ks_cards.php</filename>
 		<folder>tmpl</folder>
 	</files>
 	<languages>
-		<language tag="en-GB">language/en-GB/mod_ks_slider.ini</language>
+		<language tag="en-GB">language/en-GB/mod_ks_cards.ini</language>
 	</languages>
 	<config>
 		<fields name="params">
@@ -26,7 +26,7 @@
 					<option value="container-fluid">Fluid</option>
 					<option value="container">Container</option>
 				</field>
-				<field name="title" type="text" label="Title" description="" default="Latest Articles" />
+				<field name="title" type="text" label="Title" description="" default="Cards Module" />
 				<field name="title_show" type="radio" class="btn-group" label="Show Title" description="" default="1">
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
@@ -55,26 +55,6 @@
 				<field type="spacer" name="spacer_category" label="&lt;b&gt;CATEGORY&lt;/b&gt;" />
 				<field name="category" type="category" extension="com_content" label="Category" description="Articles within the selected category will be used as accordion items" />
 				<field name="limit" type="text" label="Limit" description="Limit the number items" default="10" />
-				<field name="spacer_slider" type="spacer" label="&lt;b&gt;Slider&lt;/b&gt;" />
-				<field name="slider_arrows" type="radio" class="btn-group" label="Show Arrows" description="Prev/Next buttons" default="1">
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field name="slider_pagination" type="radio" class="btn-group" label="Show Pagination" description="Small dots at the end" default="1">
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field name="slider_easing" type="text" label="Easing" description="Learn more - https://cubic-bezier.com" default="cubic-bezier(.42,.65,.27,.99)" />
-				<field name="slider_speed" type="text" label="Speed (ms)" description="Transition speed in milliseconds." default="500" />
-				<field name="slider_autoplay" type="radio" class="btn-group" label="Autoplay" description="" default="1">
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-				<field name="slider_interval" type="text" label="Interval (ms)" description="The autoplay interval duration in milliseconds." default="5000" />
-				<field name="slider_rewind" type="radio" class="btn-group" label="Rewind" description="Determines whether to rewind the carousel or not." default="1">
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
 				<field type="spacer" name="spacer_item" label="&lt;b&gt;Item&lt;/b&gt;" />
 				<field name="item_card" type="radio" class="btn-group" label="Style as Card" description="" default="1">
 					<option value="0">JNO</option>
@@ -131,10 +111,10 @@
 					<option value="btn-info">Info</option>
 				</field>
 				<field name="spacer_breakpoints" type="spacer" label="&lt;b&gt;Breakpoints&lt;/b&gt;" />
-				<field name="breakpoint_xs" type="integer" label="XS (&lt;576px)" description="" first="1" last="3" step="1" default="1" />
+				<field name="breakpoint_xs" type="integer" label="XS (&lt;576px)" description="" first="1" last="3" step="1" default="2" />
 				<field name="breakpoint_sm" type="integer" label="SM (≥576px)" description="" first="1" last="6" step="1" default="2" />
-				<field name="breakpoint_md" type="integer" label="MD (≥768px)" description="" first="1" last="6" step="1" default="3" />
-				<field name="breakpoint_lg" type="integer" label="LG (≥992px)" description="" first="1" last="6" step="1" default="3" />
+				<field name="breakpoint_md" type="integer" label="MD (≥768px)" description="" first="1" last="6" step="1" default="2" />
+				<field name="breakpoint_lg" type="integer" label="LG (≥992px)" description="" first="1" last="6" step="1" default="4" />
 				<field name="breakpoint_xl" type="integer" label="XL (≥1200px)" description="" first="1" last="8" step="1" default="4" />
 				<field name="breakpoint_xxl" type="integer" label="XXL (≥1400px)" description="" first="1" last="8" step="1" default="4" />
 				<field name="spacer_spacing" type="spacer" label="&lt;b&gt;Spacing&lt;/b&gt;" />

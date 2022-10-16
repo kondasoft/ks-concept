@@ -10,8 +10,9 @@
 
 defined('_JEXEC') or die;
 
-
 use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Router\Route;
+use Joomla\Component\Content\Site\Helper\RouteHelper;
 
 // $model = JModelLegacy::getInstance('Articles', 'ContentModel');
 $model = $app->bootComponent('com_content')->getMVCFactory()->createModel('Articles', 'Site', ['ignore_request' => true]);
@@ -71,28 +72,41 @@ $articles = $model->getItems();
                             $item_urls = json_decode($item->urls);
                             $img = substr($item_images->image_intro, 0, strpos($item_images->image_intro, '#'));
                             $img_size = $img ? getimagesize(JPATH_BASE . '/' . $img) : null;
+                            if ($item_urls->urlatext) {
+                                $item_url = empty($item_urls->urla) ? Route::_(RouteHelper::getArticleRoute($item->id, $item->catid, $item->language)) : $item_urls->urla;
+                            }
                         ?>
                         <li class="splide__slide">
-                            <div class="<?php if ($params->get('item_card', 1)) : ?>card<?php endif ?>">
+                            <div class="<?php if ($params->get('item_card', 1)) : ?>card h-100<?php endif ?>">
                                 <?php if ($params->get('item_img_show', 1) && $img) : ?>
-                                    <img 
-                                        class="
-                                            img-fluid 
-                                            <?php if ($params->get('item_card', 1)) : ?>
-                                                card-img-top
-                                            <?php else : ?>
-                                                mb-4 <?php echo htmlspecialchars($params->get('img_border', 'img-thumbnail')) ?>
-                                            <?php endif ?>
-                                        "
-                                        src="<?php echo htmlspecialchars($img); ?>"
-                                        alt="<?php echo htmlspecialchars($item_images->image_intro_alt); ?>"
-                                        width="<?php echo htmlspecialchars($img_size[0]) ?>"
-                                        height="<?php echo htmlspecialchars($img_size[1]) ?>"
-                                        loading="lazy">
+                                    <?php if ($item_url) : ?>
+                                        <a href="<?php echo htmlspecialchars($item_url) ?>">
+                                    <?php endif ?>
+                                        <img 
+                                            class="
+                                                img-fluid 
+                                                <?php if ($params->get('item_card', 1)) : ?>
+                                                    card-img-top
+                                                <?php else : ?>
+                                                    mb-4 <?php echo htmlspecialchars($params->get('img_border', 'img-thumbnail')) ?>
+                                                <?php endif ?>
+                                            "
+                                            src="<?php echo htmlspecialchars($img); ?>"
+                                            alt="<?php echo htmlspecialchars($item_images->image_intro_alt); ?>"
+                                            width="<?php echo htmlspecialchars($img_size[0]) ?>"
+                                            height="<?php echo htmlspecialchars($img_size[1]) ?>"
+                                            loading="lazy">
+                                    <?php if ($item_url) : ?>
+                                        </a>
+                                    <?php endif ?>
                                 <?php endif ?>
-                                <div class="<?php if ($params->get('item_card', 1)) : ?>card-body<?php endif ?>">
+                                <div 
+                                    class="
+                                        <?php if ($params->get('item_card', 1)) : ?>card-body<?php endif ?>
+                                        <?php echo htmlspecialchars($params->get('item_text_align', '')) ?>
+                                    ">
                                     <?php if ($params->get('item_title_show', 1)) : ?>
-                                        <h3 class="item-title mb-3 <?php echo htmlspecialchars($params->get('item_title_size', 'h5')) ?>">
+                                        <h3 class="item-title mb-2 <?php echo htmlspecialchars($params->get('item_title_size', 'h5')) ?>">
                                             <?php echo htmlspecialchars($item->title); ?>
                                         </h3>
                                     <?php endif ?>
@@ -101,10 +115,10 @@ $articles = $model->getItems();
                                             <?php echo strip_tags($item->introtext, '<p><a><br><br/><strong>'); ?>
                                         </div>
                                     <?php endif ?>
-                                    <?php if ($params->get('item_btn_show', 1) && $item_urls->urla) : ?>
+                                    <?php if ($params->get('item_btn_show', 1) && $item_urls->urlatext) : ?>
                                         <a 
                                             class="btn mt-5 <?php echo htmlspecialchars($params->get('item_btn_color', 'btn-primary') ) ?>" 
-                                            href="<?php echo htmlspecialchars($item_urls->urla) ?>"
+                                            href="<?php echo htmlspecialchars($item_url) ?>"
                                             target="<?php if ($item_urls->targeta == 1): ?>_blank<?php endif ?>">
                                             <?php echo htmlspecialchars($item_urls->urlatext) ?>
                                         </a>
