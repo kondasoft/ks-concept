@@ -6,7 +6,6 @@ https://ks-concept.joomla.com
 
 # Download
 Download the full package (templates and modules) and the Clone Installer package from our website (link below).
-
 https://www.kondasoft.com/products/ks-concept
 
 # Support
