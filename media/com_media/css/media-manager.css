@@ -226,35 +226,33 @@ html[dir=rtl] .infobar-leave-active {
 }
 
 .media-browser-grid {
-  padding: 15px 0 15px 15px;
+  padding: 15px;
 }
 
 .media-browser-items {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 15px;
+}
+.media-browser-items.media-browser-items-sm {
+  grid-template-columns: repeat(auto-fill, minmax(13%, 1fr));
+}
+.media-browser-items.media-browser-items-md {
+  grid-template-columns: repeat(auto-fill, minmax(18%, 1fr));
+}
+.media-browser-items.media-browser-items-lg {
+  grid-template-columns: repeat(auto-fill, minmax(26%, 1fr));
+}
+.media-browser-items.media-browser-items-xl {
+  grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
 }
 
 .media-browser-item {
   position: relative;
-  margin-right: 15px;
-  margin-bottom: 15px;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-}
-.media-browser-items-sm .media-browser-item {
-  width: calc(12.5% - 15px);
-}
-.media-browser-items-md .media-browser-item {
-  width: calc(16.666% - 15px);
-}
-.media-browser-items-lg .media-browser-item {
-  width: calc(25% - 15px);
-}
-.media-browser-items-xl .media-browser-item {
-  width: calc(50% - 15px);
 }
 
 .media-browser-item-preview {
@@ -348,30 +346,52 @@ html[dir=rtl] .infobar-leave-active {
 .media-browser-item.active .media-browser-actions > button {
   opacity: 1;
 }
+.media-browser-actions.active {
+  top: 0;
+  z-index: 1;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 100%;
+  background-color: var(--template-bg-dark-3);
+  border: 1px solid hsl(var(--hue), 35%, 95%);
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 10px -8px var(--template-bg-dark-50);
+}
 .media-browser-actions.active > button {
   display: none;
 }
-.media-browser-actions ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  -webkit-column-gap: 5px;
-     -moz-column-gap: 5px;
-          column-gap: 5px;
-  -webkit-columns: 2;
-     -moz-columns: 2;
-          columns: 2;
+@media (max-width: 576px) {
+  .actions .media-browser-actions.active {
+    height: 100%;
+    overflow: visible;
+  }
+  .actions .media-browser-actions.active .media-browser-actions-list {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--template-bg-dark-3);
+  }
 }
 
 .media-browser-actions-list {
   display: flex;
   flex-direction: column;
+  margin-top: 2px;
+}
+.media-browser-actions-list .media-browser-actions-item-name {
+  padding: 2px;
+  -webkit-margin-after: 3px;
+          margin-block-end: 3px;
 }
 .media-browser-actions-list button, .media-browser-actions-list a {
   position: relative;
   top: 0;
-  padding: 0;
-  margin-bottom: 3px;
+  padding: 2px;
+  -webkit-margin-after: 3px;
+          margin-block-end: 3px;
   visibility: hidden;
   background-color: transparent;
   border: 0;
@@ -381,33 +401,32 @@ html[dir=rtl] .infobar-leave-active {
 }
 .media-browser-actions.active .media-browser-actions-list button, .media-browser-actions.active .media-browser-actions-list a {
   top: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
   visibility: visible;
   opacity: 1;
   transition-duration: 0.2s;
 }
-.media-browser-actions.active .media-browser-actions-list button:first-of-type, .media-browser-actions.active .media-browser-actions-list a:first-of-type {
-  transition-delay: 0.1s;
+.media-browser-actions.active .media-browser-actions-list button:hover, .media-browser-actions.active .media-browser-actions-list button:focus, .media-browser-actions.active .media-browser-actions-list a:hover, .media-browser-actions.active .media-browser-actions-list a:focus {
+  background-color: var(--template-bg-dark-10);
 }
-.media-browser-actions.active .media-browser-actions-list button:nth-of-type(2), .media-browser-actions.active .media-browser-actions-list a:nth-of-type(2) {
-  transition-delay: 0.15s;
-}
-.media-browser-actions.active .media-browser-actions-list button:nth-of-type(3), .media-browser-actions.active .media-browser-actions-list a:nth-of-type(3) {
-  transition-delay: 0.2s;
-}
-.media-browser-actions.active .media-browser-actions-list button:nth-of-type(4), .media-browser-actions.active .media-browser-actions-list a:nth-of-type(4) {
-  transition-delay: 0.25s;
+.media-browser-actions.active .media-browser-actions-list button:hover.action-delete, .media-browser-actions.active .media-browser-actions-list button:focus.action-delete, .media-browser-actions.active .media-browser-actions-list a:hover.action-delete, .media-browser-actions.active .media-browser-actions-list a:focus.action-delete {
+  color: #fff;
+  background-color: #d9534f;
 }
 
 .image-browser-action {
   width: calc(1.3rem * 1.55);
   height: calc(1.3rem * 1.55);
-  margin-right: 4px;
-  margin-left: 4px;
+  margin-inline: 4px;
   color: #fff;
   text-align: center;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 0.25rem;
+  flex-shrink: 0;
+  transition-duration: 0.2s;
 }
 .action-delete .image-browser-action {
   background-color: #d9534f;
@@ -416,9 +435,15 @@ html[dir=rtl] .infobar-leave-active {
   font-size: 1.3rem;
   line-height: calc(1.3rem * 1.55);
 }
-.image-browser-action:hover {
+.image-browser-action:hover, .image-browser-action:focus, button:hover .image-browser-action, button:focus .image-browser-action {
   color: rgba(0, 0, 0, 0.8);
   background-color: #fff;
+}
+
+.action-text {
+  flex-shrink: 0;
+  text-align: start;
+  padding-inline: 5px;
 }
 
 .image-background {
@@ -430,8 +455,8 @@ html[dir=rtl] .infobar-leave-active {
 
 .image-cropped {
   aspect-ratio: 1/1;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
   border-radius: 0.25rem;

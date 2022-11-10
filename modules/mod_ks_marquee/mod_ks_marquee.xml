@@ -8,26 +8,27 @@
 	<authorEmail>info@kondasoft.com</authorEmail>
 	<authorUrl>www.kondasoft.com</authorUrl>
 	<version>1.0.0</version>
-	<description>Infinite scrolling text</description>
+	<description></description>
 	<files>
 		<filename module="mod_ks_marquee">mod_ks_marquee.php</filename>
-		<folder>css</folder>
+		<folder>assets</folder>
 		<folder>tmpl</folder>
 	</files>
-	<languages>
-		<language tag="en-GB">language/en-GB/mod_ks_marquee.ini</language>
-	</languages>
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
 				<field name="text" type="textarea" label="Text" description="Comma separated list of words to scroll" default="Spectacular, Mind-blowing, Breathtaking, Eye-catching, Out of this world, magnificient" />
 				<field type="spacer" name="spacer_general" label="&lt;b&gt;GENERAL&lt;/b&gt;" />
-				<field name="bg_color" type="list" label="Background Color" description="" default="bg-dark text-white">
+				<field name="bg_color" type="list" label="Background Color" description="" default="bg-white text-dark">
 					<option value="bg-white text-dark">White</option>
 					<option value="bg-light text-dark">Light</option>
 					<option value="bg-primary text-white">Primary</option>
 					<option value="bg-secondary text-white">Secondary</option>
 					<option value="bg-dark text-white">Dark</option>
+					<option value="bg-success text-white">Success</option>
+					<option value="bg-danger text-white">Danger</option>
+					<option value="bg-warning text-dark">Warning</option>
+					<option value="bg-info text-white">Info</option>
 				</field>
 				<field name="font_weight" type="list" label="Font Weight" description="" default="fw-normal">
 					<option value="fw-normal">Normal</option>

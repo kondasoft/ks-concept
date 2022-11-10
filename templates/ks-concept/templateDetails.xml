@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="template" client="site">
-	<name>KS Concept</name>
+	<name>ks-concept</name>
 	<version>1.0.0</version>
 	<creationDate>2022-10</creationDate>
 	<author>KondaSoft</author>
 	<authorEmail>info@kondasoft.com</authorEmail>
 	<copyright>(C) 2022 KondaSoft, Inc.</copyright>
-	<description>TPL_KS_CONCEPT_XML_DESCRIPTION</description>
+	<description>Free Joomla Template Powered By The Bootstrap Framework (v5) And 15+ Years Of Coding Experience.</description>
 	<inheritable>1</inheritable>
 	<files>
 		<filename>component.php</filename>
 		<filename>error.php</filename>
 		<filename>index.php</filename>
-		<filename>joomla.asset.json</filename>
 		<filename>offline.php</filename>
 		<filename>templateDetails.xml</filename>
+		<folder>assets</folder>
 		<folder>html</folder>
+		<folder>includes</folder>
 	</files>
-	<media destination="templates/site/cassiopeia" folder="media">
-		<folder>js</folder>
-		<folder>css</folder>
-		<folder>scss</folder>
-		<folder>images</folder>
+	<media folder="media">
+		<folder>kondasoft</folder>
 	</media>
+	<media destination="templates/site/ks-concept/images" folder="media">
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+	</media>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/tpl_ks-concept.ini</language>
+	</languages>
 	<positions>
 		<position>topbar</position>
 		<position>mainmenu-mobile</position>
@@ -33,10 +38,6 @@
 		<position>footer</position>
 		<position>debug</position>
 	</positions>
-	<languages folder="language">
-		<language tag="en-GB">en-GB/TPL_KS_CONCEPT.ini</language>
-		<language tag="en-GB">en-GB/TPL_KS_CONCEPT.sys.ini</language>
-	</languages>
 	<config>
 		<fields name="params">
 			<!-- General -->
@@ -87,13 +88,17 @@
 						<option value="bg-primary text-white">Primary</option>
 						<option value="bg-secondary text-white">Secondary</option>
 						<option value="bg-dark text-white">Dark</option>
+						<option value="bg-success text-white">Success</option>
+						<option value="bg-danger text-white">Danger</option>
+						<option value="bg-warning text-dark">Warning</option>
+						<option value="bg-info text-white">Info</option>
 					</field>
 					<field name="layout_topbar_spacing" type="integer" label="Spacing" description="Padding top/bottom" first="0" last="5" step="1" default="2" />
 				</fieldset>
 				<fieldset name="layout_navbar" label="Navbar">
-					<field name="layout_navbar_bg_color" type="list" label="Background Color" description="" default="bg-white">
-						<option value="bg-white">White</option>
-						<option value="bg-light">Light</option>
+					<field name="layout_navbar_bg_color" type="list" label="Background Color" description="" default="bg-white navbar-light">
+						<option value="bg-white navbar-light">White</option>
+						<option value="bg-light navbar-light">Light</option>
 						<option value="bg-primary navbar-dark">Primary</option>
 						<option value="bg-secondary navbar-dark">Secondary</option>
 						<option value="bg-dark navbar-dark">Dark</option>
@@ -113,11 +118,13 @@
 						<option value="cta-button">CTA Button</option>
 					</field>
 					<field name="layout_navbar_cta_button_text" type="text" label="CTA Button Text" description="" default="Contact us" showon="layout_navbar_right_content:cta-button" />
+					<field name="layout_navbar_cta_button_icon" type="textarea" label="CTA Button Icon Class" description="Will be shown as a replacement for the text in mobile view" default="icon-mail" showon="layout_navbar_right_content:cta-button" />
 					<field name="layout_navbar_cta_button_url" type="url" label="CTA Button URL" description="" default="" showon="layout_navbar_right_content:cta-button" />
 					<field name="layout_navbar_cta_button_color" type="list" label="CTA Button Color" description="" default="btn-primary" showon="layout_navbar_right_content:cta-button">
 						<option value="btn-primary">Primary</option>
 						<option value="btn-secondary">Secondary</option>
-						<option value="btn-secondary">Dark</option>
+						<option value="btn-dark">Dark</option>
+						<option value="btn-light">Light</option>
 						<option value="btn-success">Success</option>
 						<option value="btn-danger">Danger</option>
 						<option value="btn-warning">Warning</option>
@@ -136,14 +143,23 @@
 					<field name="layout_footer_spacing_top" type="integer" label="Spacing Top" description="Padding top only" first="0" last="12" step="1" default="10" />
 				</fieldset>
 				<fieldset name="layout_offcanvas_menu" label="Offcanvas menu">
-				<field name="layout_offcanvas_menu_width" type="text" label="Width (px)" description="" default="300" />
+					<field name="layout_offcanvas_menu_width" type="text" label="Width (px)" description="" default="300" />
 					<field name="layout_offcanvas_menu_header_bg_color" type="list" label="Header Bg Color" description="" default="bg-primary text-white">
 						<option value="bg-white text-dark">White</option>
 						<option value="bg-light text-dark">Light</option>
 						<option value="bg-primary text-white">Primary</option>
 						<option value="bg-secondary text-white">Secondary</option>
 						<option value="bg-dark text-white">Dark</option>
+						<option value="bg-success text-white">Success</option>
+						<option value="bg-danger text-white">Danger</option>
+						<option value="bg-warning text-dark">Warning</option>
+						<option value="bg-info text-white">Info</option>
 					</field>
+					<field name="layout_offcanvas_show_social_menu" type="radio" class="btn-group" label="Show Social Menu" description="" default="1">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+					<field name="layout_offcanvas_social_menu" type="menu" default="social-media-links" label="Select Menu" description="" showon="layout_offcanvas_show_social_menu:1" />
 				</fieldset>
 			</fieldset>
 		</fields>

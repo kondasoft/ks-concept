@@ -16,6 +16,7 @@ use Joomla\CMS\HTML\HTMLHelper;
 $model = $app->bootComponent('com_content')->getMVCFactory()->createModel('Articles', 'Site', ['ignore_request' => true]);
 $model->setState('params', $app->getParams());
 $model->setState('filter.category_id', htmlspecialchars($params->get('category')));
+$model->setState('filter.published', 1);
 $model->setState('list.limit', $params->get('limit', 3));
 $articles = $model->getItems();
 // print_r($articles)
@@ -110,7 +111,7 @@ $articles = $model->getItems();
             data-bs-target="#ks-carousel-<?php echo $module->id; ?>" 
             data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden"><?php echo JText::_('MOD_KS_CAROUSEL_PREV') ?></span>
+            <span class="visually-hidden">Previous</span>
         </button>
         <button 
             class="carousel-control-next" 
@@ -118,7 +119,7 @@ $articles = $model->getItems();
             data-bs-target="#ks-carousel-<?php echo $module->id; ?>" 
             data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden"><?php echo JText::_('MOD_KS_CAROUSEL_NEXT') ?></span>
+            <span class="visually-hidden">Next</span>
         </button>
     <?php endif ?>
 </div>

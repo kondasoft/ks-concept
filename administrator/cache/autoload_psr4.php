@@ -1,6 +1,8 @@
 <?php
 defined('_JEXEC') or die;
 return [
+	'Akeeba\\Component\\AkeebaBackup\\Administrator\\' => [JPATH_ADMINISTRATOR . '/components/com_akeebabackup/src'],
+	'Akeeba\\Component\\AkeebaBackup\\Site\\' => [JPATH_SITE . '/components/com_akeebabackup/src'],
 	'Joomla\\Component\\Actionlogs\\Administrator\\' => [JPATH_ADMINISTRATOR . '/components/com_actionlogs/src'],
 	'Joomla\\Component\\Admin\\Administrator\\' => [JPATH_ADMINISTRATOR . '/components/com_admin/src'],
 	'Joomla\\Component\\Associations\\Administrator\\' => [JPATH_ADMINISTRATOR . '/components/com_associations/src'],
@@ -122,6 +124,7 @@ return [
 	'Joomla\\Plugin\\Multifactorauth\\Totp\\' => [JPATH_PLUGINS . '/multifactorauth/totp/src'],
 	'Joomla\\Plugin\\Multifactorauth\\Webauthn\\' => [JPATH_PLUGINS . '/multifactorauth/webauthn/src'],
 	'Joomla\\Plugin\\Multifactorauth\\Yubikey\\' => [JPATH_PLUGINS . '/multifactorauth/yubikey/src'],
+	'Joomla\\Plugin\\Quickicon\\AkeebaBackup\\' => [JPATH_PLUGINS . '/quickicon/akeebabackup/src'],
 	'Joomla\\Plugin\\Quickicon\\Joomlaupdate\\' => [JPATH_PLUGINS . '/quickicon/joomlaupdate/src'],
 	'Joomla\\Plugin\\System\\Cache\\' => [JPATH_PLUGINS . '/system/cache/src'],
 	'Joomla\\Plugin\\System\\Debug\\' => [JPATH_PLUGINS . '/system/debug/src'],

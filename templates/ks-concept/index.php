@@ -10,69 +10,10 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
-use Joomla\CMS\HTML\HTMLHelper;
 
 /** @var Joomla\CMS\Document\HtmlDocument $this */
 
-$app = Factory::getApplication();
-$wa  = $this->getWebAssetManager();
-
-// Browsers support SVG favicons
-$this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon.svg', '', [], true, 1), 'icon', 'rel', ['type' => 'image/svg+xml']);
-$this->addHeadLink(HTMLHelper::_('image', 'favicon.ico', '', [], true, 1), 'alternate icon', 'rel', ['type' => 'image/vnd.microsoft.icon']);
-$this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon-pinned.svg', '', [], true, 1), 'mask-icon', 'rel', ['color' => '#000']);
-
-// Detecting Active Variables
-$option     = $app->input->getCmd('option', '');
-$view       = $app->input->getCmd('view', '');
-$layout     = $app->input->getCmd('layout', '');
-$task       = $app->input->getCmd('task', '');
-$itemid     = $app->input->getCmd('Itemid', '');
-$sitename   = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
-$menu       = $app->getMenu()->getActive();
-$lang       = $app->getLanguage();
-$pageclass  = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
-$template_path  = 'templates/' . $app->getTemplate();
-
-
-// Vendor Stylesheets
-$wa->registerAndUseStyle('bootstrap', 'media/kondasoft/bootstrap/bootstrap.min.css');
-$wa->registerAndUseStyle('animate.css', 'media/kondasoft/animate-css/animate.min.css');
-
-// Vendor JavaScript
-$wa->registerAndUseScript('bootstrap', 'media/kondasoft/bootstrap/bootstrap.bundle.min.js', [], ['defer' => 'defer']);
-$wa->registerAndUseScript('enter-view', 'media/kondasoft/enter-view/enter-view.min.js', [], ['defer' => 'defer']);
-
-// Template CSS variables
-require_once($template_path . '/assets/css/variables.php');
-
-// Template Stylesheets
-HTMLHelper::stylesheet($template_path . '/assets/css/base.css');
-HTMLHelper::stylesheet($template_path . '/assets/css/layout.css');
-HTMLHelper::stylesheet($template_path . '/assets/css/joomla.css');
-HTMLHelper::stylesheet($template_path . '/assets/css/custom.css');
-
-// Template Javascript
-HTMLHelper::script($template_path . '/assets/js/base.js', [], ['defer' => 'defer']);
-HTMLHelper::script($template_path . '/assets/js/smart-search.js', [], ['defer' => 'defer']);
-HTMLHelper::script($template_path . '/assets/js/layout.js', [], ['defer' => 'defer']);
-HTMLHelper::script($template_path . '/assets/js/custom.js', [], ['defer' => 'defer']);
-
-// Google Fonts
-$headingsFontFamily = htmlspecialchars(preg_replace('/\s+/', '+' , $this->params->get('general_typography_headings_font_family', 'Roboto')));
-$headingsFontWeight = htmlspecialchars($this->params->get('general_typography_headings_font_weight', '500'));
-if ($this->params->get('general_typography_body_font_option', 'system-fonts') === 'google-fonts') {
-    $bodyFontFamily = htmlspecialchars(preg_replace('/\s+/', '+' , $this->params->get('general_typography_body_font_family', 'Open Sans')));
-    $googleFonts = '?family=' . $headingsFontFamily . ':wght@' . $headingsFontWeight . '&family=' . $bodyFontFamily . ':ital,wght@0,400;0,500;0,700;1,400';
-} else {
-    $googleFonts = '?family=' . $headingsFontFamily . ':wght@' . $headingsFontWeight;
-}
-HTMLHelper::stylesheet('https://fonts.googleapis.com/css2' . $googleFonts . '&display=swap');
-
-// Other
-$this->setMetaData('viewport', 'width=device-width, initial-scale=1');
-$this->getPreloadManager()->preconnect('https://fonts.googleapis.com/', []);
-$this->getPreloadManager()->preconnect('https://fonts.gstatic.com/', []);
+require_once('templates/' . Factory::getApplication()->getTemplate() . '/includes/head.php');
 ?>
 
 <!DOCTYPE html>
@@ -123,7 +64,7 @@ $this->getPreloadManager()->preconnect('https://fonts.gstatic.com/', []);
         id="site-navbar"
         class="
             navbar navbar-expand sticky-top
-            <?php echo htmlspecialchars($this->params->get('layout_navbar_bg_color', 'bg-white')) ?> 
+            <?php echo htmlspecialchars($this->params->get('layout_navbar_bg_color', 'bg-white navbar-light')) ?> 
             <?php echo htmlspecialchars($this->params->get('layout_navbar_shadow', 'shadow-sm')) ?> 
             <?php echo 'py-' . htmlspecialchars($this->params->get('layout_navbar_spacing', '3')) ?>
         ">
@@ -145,33 +86,42 @@ $this->getPreloadManager()->preconnect('https://fonts.gstatic.com/', []);
                 </div>
                 <div class="col-6">
                     <div class="text-center">
-                        <?php require($template_path . '/includes/navbar-logo.php'); ?>
+                        <?php require('templates/' . Factory::getApplication()->getTemplate() . '/includes/navbar-logo.php'); ?>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="text-end">
                         <?php if ($this->params->get('layout_navbar_right_content', 'smart-search') === 'smart-search') : ?>
                             <a 
-                                class="nav-link d-inline-block px-3 py-2"
+                                class="smart-search-icon-link nav-link d-inline-flex px-3 py-2"
                                 data-bs-toggle="collapse" 
-                                href="#offcanvas-search" 
-                                aria-controls="offcanvas-search" 
+                                href="#smart-search-form-collapse-mobile" 
                                 aria-expanded="false" 
+                                aria-controls="smart-search-form-collapse-mobile"
                                 aria-label="<?php echo JText::_('TPL_KS_CONCEPT_SMART_SEARCH_INPUT_LABEL') ?>"
                                 role="button">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                </svg>
+                                <span class="icon-search"></span>
+                                <span class="icon-close" hidden></span>
                             </a>
                         <?php elseif ($this->params->get('layout_navbar_right_content', 'smart-search') === 'cta-button') : ?>
-                            <?php require_once($template_path . '/includes/cta-button.php'); ?>
+                            <a
+                                class="cta-button nav-link d-inline-flex px-3 py-2"
+                                href="<?php echo htmlspecialchars($this->params->get('layout_navbar_cta_button_url', '#')) ?>"
+                                aria-label="<?php echo htmlspecialchars($this->params->get('layout_navbar_cta_button_text', 'Contact us')) ?>">
+                                <span class="<?php echo htmlspecialchars($this->params->get('layout_navbar_cta_button_icon', 'icon-mail')) ?>"></span>
+                            </a>
                         <?php endif ?>
                     </div>
                 </div>
             </div>
+            <?php if ($this->params->get('layout_navbar_right_content', 'smart-search') === 'smart-search') : ?>
+                <div id="smart-search-form-collapse-mobile" class="collapse">
+                    <?php require('templates/' . Factory::getApplication()->getTemplate() . '/includes/smart-search.php'); ?>
+                </div>
+            <?php endif ?>
             <div id="site-navbar-row-desktop" class="row align-items-center d-none d-xl-flex">
                 <div class="col-3">
-                    <?php require($template_path . '/includes/navbar-logo.php'); ?>
+                    <?php require('templates/' . Factory::getApplication()->getTemplate() . '/includes/navbar-logo.php'); ?>
                 </div>
                 <div class="col-6">
                     <div class="collapse navbar-collapse justify-content-center">
@@ -180,9 +130,14 @@ $this->getPreloadManager()->preconnect('https://fonts.gstatic.com/', []);
                 </div>
                 <div class="col-3">
                     <?php if ($this->params->get('layout_navbar_right_content', 'smart-search') === 'smart-search') : ?>
-                        <?php require_once($template_path . '/includes/smart-search.php'); ?>
+                        <?php require('templates/' . Factory::getApplication()->getTemplate() . '/includes/smart-search.php'); ?>
                     <?php elseif ($this->params->get('layout_navbar_right_content', 'smart-search') === 'cta-button') : ?>
-                        <?php require_once($template_path . '/includes/cta-button.php'); ?>
+                        <a
+                            class="cta-button btn d-inline-flex align-items-center <?php echo htmlspecialchars($this->params->get('layout_navbar_cta_button_color', 'btn-primary')) ?>"
+                            href="<?php echo htmlspecialchars($this->params->get('layout_navbar_cta_button_url', '#')) ?>">
+                            <span class="<?php echo htmlspecialchars($this->params->get('layout_navbar_cta_button_icon', 'icon-mail')) ?> me-3"></span>
+                            <?php echo htmlspecialchars($this->params->get('layout_navbar_cta_button_text', 'Contact us')) ?>
+                        </a>
                     <?php endif ?>
                 </div>
             </div>
@@ -191,20 +146,18 @@ $this->getPreloadManager()->preconnect('https://fonts.gstatic.com/', []);
 
     <main id="site-main" role="main">
         <jdoc:include type="modules" name="main-top" style="none" />
-        
-            <?php if ($menu == $app->getMenu()->getDefault($lang->getTag())) :?>
-                <?php if ($this->params->get('layout_general_hide_homepage_component', 1) === 0) : ?>
-                    <div class="container py-10">
-                        <jdoc:include type="component" />
-                    </div>
-                <?php else : ?>
-                    <jdoc:include type="message" />
-                <?php endif ?>
-            <?php else : ?>
-                <div class="container py-10">
-                    <jdoc:include type="component" />
-                </div>
+
+        <?php 
+            $is_homepage = $menu == Factory::getApplication()->getMenu()->getDefault($lang->getTag());
+            $hide_homepage_content = $is_homepage && $this->params->get('layout_general_hide_homepage_component', 1);
+        ?>
+
+        <div class="container <?php if (!$hide_homepage_content) : ?>py-10<?php endif ?>">
+            <jdoc:include type="message" />
+            <?php if (!$hide_homepage_content) : ?>
+                <jdoc:include type="component" />
             <?php endif ?>
+        </div>
 
         <jdoc:include type="modules" name="main-bottom" style="none" />
     </main>
@@ -231,7 +184,7 @@ $this->getPreloadManager()->preconnect('https://fonts.gstatic.com/', []);
         </div>
     </footer>
 
-    <?php require_once($template_path . '/includes/offcanvas-menu.php'); ?>
+    <?php require_once('templates/' . Factory::getApplication()->getTemplate() . '/includes/offcanvas-menu.php'); ?>
 
     <jdoc:include type="modules" name="debug" style="none" />
 </body>

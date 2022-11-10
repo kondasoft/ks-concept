@@ -8,19 +8,27 @@
 	<authorEmail>info@kondasoft.com</authorEmail>
 	<authorUrl>www.kondasoft.com</authorUrl>
 	<version>1.0.0</version>
-	<description>Accordion (F.A.Q) module</description>
+	<description></description>
 	<files>
-		<filename module="mod_ks_carousel">mod_ks_accordion.php</filename>
+		<filename module="mod_ks_accordion">mod_ks_accordion.php</filename>
+		<folder>assets</folder>
 		<folder>tmpl</folder>
 	</files>
-	<languages>
-		<language tag="en-GB">language/en-GB/mod_ks_accordion.ini</language>
-	</languages>
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
 				<field name="spacer_general" type="spacer" label="&lt;b&gt;GENERAL&lt;/b&gt;" />
-				<field name="bg_color" type="color" label="Background Color" description="" default="#ffffff" />
+				<field name="bg_color" type="list" label="Background Color" description="" default="bg-white text-dark">
+					<option value="bg-white text-dark">White</option>
+					<option value="bg-light text-dark">Light</option>
+					<option value="bg-primary text-white">Primary</option>
+					<option value="bg-secondary text-white">Secondary</option>
+					<option value="bg-dark text-white">Dark</option>
+					<option value="bg-success text-white">Success</option>
+					<option value="bg-danger text-white">Danger</option>
+					<option value="bg-warning text-dark">Warning</option>
+					<option value="bg-info text-white">Info</option>
+				</field>
 				<field name="accordion_style" type="list" label="Accordion Style" description="Select 'flush' if you prefer a cleaner styling." default="accordion-default">
 					<option value="accordion-default">Default</option>
 					<option value="accordion-flush">Flush</option>

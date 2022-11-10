@@ -6,6 +6,18 @@
   "license": "GPL-2.0-or-later",
   "assets": [
     {
+      "name": "com_tags.tag-default",
+      "type": "script",
+      "uri": "com_tags/tag-default.min.js",
+      "dependencies": [
+        "com_tags.tag-default.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "4efda122de260213f85aceee619bfc3ea5b4a0aa"
+    },
+    {
       "name": "com_tags.tag-default.es5",
       "type": "script",
       "uri": "com_tags/tag-default-es5.min.js",
@@ -17,18 +29,6 @@
         "defer": true
       },
       "version": "4d40a071d6672febde9190f361c8adecc94917d8"
-    },
-    {
-      "name": "com_tags.tag-default",
-      "type": "script",
-      "uri": "com_tags/tag-default.min.js",
-      "dependencies": [
-        "com_tags.tag-default.es5"
-      ],
-      "attributes": {
-        "type": "module"
-      },
-      "version": "4efda122de260213f85aceee619bfc3ea5b4a0aa"
     },
     {
       "name": "com_tags.tag-list.es5",

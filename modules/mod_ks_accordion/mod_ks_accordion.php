@@ -12,6 +12,9 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Helper\ModuleHelper;
 
-JFactory::getDocument()->addStyleSheet(JURI::root(true). '/modules/mod_ks_image_with_text/assets/style.css');
+$wa->registerAndUseStyle('bootstrap', 'media/kondasoft/bootstrap/bootstrap.min.css');
+$wa->registerAndUseScript('bootstrap', 'media/kondasoft/bootstrap/bootstrap.bundle.min.js', [], ['defer' => 'defer']);
+
+JFactory::getDocument()->addStyleSheet(JURI::root(true). '/modules/mod_ks_accordion/assets/style.css');
 
 require ModuleHelper::getLayoutPath('mod_ks_accordion', $params->get('layout', 'default'));

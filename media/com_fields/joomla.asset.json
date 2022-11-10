@@ -19,16 +19,16 @@
       "version": "5780779c6074b99b6fb29a4833c9309ebcd83609"
     },
     {
-      "name": "com_fields.admin-field-changecontext",
+      "name": "com_fields.admin-field-edit",
       "type": "script",
-      "uri": "com_fields/admin-field-changecontext.min.js",
+      "uri": "com_fields/admin-field-edit.min.js",
       "dependencies": [
-        "com_fields.admin-field-changecontext.es5"
+        "com_fields.admin-field-edit.es5"
       ],
       "attributes": {
         "type": "module"
       },
-      "version": "65e13e836b42704a7893584291963600a20e5006"
+      "version": "e75588fe93805cb6b8627b7736dbc2ac5849a14a"
     },
     {
       "name": "com_fields.admin-field-edit.es5",
@@ -44,16 +44,16 @@
       "version": "c76a0cb29034fb3e18659e450c5ceb782f0bc3cc"
     },
     {
-      "name": "com_fields.admin-field-edit",
+      "name": "com_fields.admin-field-changecontext",
       "type": "script",
-      "uri": "com_fields/admin-field-edit.min.js",
+      "uri": "com_fields/admin-field-changecontext.min.js",
       "dependencies": [
-        "com_fields.admin-field-edit.es5"
+        "com_fields.admin-field-changecontext.es5"
       ],
       "attributes": {
         "type": "module"
       },
-      "version": "e75588fe93805cb6b8627b7736dbc2ac5849a14a"
+      "version": "65e13e836b42704a7893584291963600a20e5006"
     },
     {
       "name": "com_fields.admin-field-typehaschanged.es5",
@@ -94,18 +94,6 @@
       "version": "6f05cd6110c8c8d7a6174c32fe9a5db3f3817b58"
     },
     {
-      "name": "com_fields.admin-fields-batch",
-      "type": "script",
-      "uri": "com_fields/admin-fields-default-batch.min.js",
-      "dependencies": [
-        "com_fields.admin-fields-batch.es5"
-      ],
-      "attributes": {
-        "type": "module"
-      },
-      "version": "44eacfea3b23ae0d409b1c109e0ce33bf286d191"
-    },
-    {
       "name": "com_fields.admin-fields-modal.es5",
       "type": "script",
       "uri": "com_fields/admin-fields-modal-es5.min.js",
@@ -129,6 +117,18 @@
         "type": "module"
       },
       "version": "21cda0d5265712ca6fd9f6adb8c3fef71dec9cfe"
+    },
+    {
+      "name": "com_fields.admin-fields-batch",
+      "type": "script",
+      "uri": "com_fields/admin-fields-default-batch.min.js",
+      "dependencies": [
+        "com_fields.admin-fields-batch.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "44eacfea3b23ae0d409b1c109e0ce33bf286d191"
     }
   ]
 }

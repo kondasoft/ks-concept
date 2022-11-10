@@ -39,19 +39,6 @@
       "version": "892d148c17eeb917af72a963fcc2b2975c04b34d"
     },
     {
-      "name": "com_languages.admin-override-edit-refresh-searchstring.es5",
-      "type": "script",
-      "uri": "com_languages/admin-override-edit-refresh-searchstring-es5.min.js",
-      "dependencies": [
-        "core"
-      ],
-      "attributes": {
-        "nomodule": true,
-        "defer": true
-      },
-      "version": "d694b7e69a08d5dbbc34f04133bf2187292f970d"
-    },
-    {
       "name": "com_languages.admin-override-edit-refresh-searchstring",
       "type": "script",
       "uri": "com_languages/admin-override-edit-refresh-searchstring.min.js",
@@ -70,9 +57,9 @@
       "version": "d09d8e0db729a24529b80fb442bf9701f4ec680d"
     },
     {
-      "name": "com_languages.overrider.es5",
+      "name": "com_languages.admin-override-edit-refresh-searchstring.es5",
       "type": "script",
-      "uri": "com_languages/overrider-es5.min.js",
+      "uri": "com_languages/admin-override-edit-refresh-searchstring-es5.min.js",
       "dependencies": [
         "core"
       ],
@@ -80,7 +67,7 @@
         "nomodule": true,
         "defer": true
       },
-      "version": "75ee32f5129ea44d63b61ab321e40d90592d8c70"
+      "version": "d694b7e69a08d5dbbc34f04133bf2187292f970d"
     },
     {
       "name": "com_languages.overrider",
@@ -93,6 +80,19 @@
         "type": "module"
       },
       "version": "a1da6c924ac19be8696d4c1df3f64066a595a351"
+    },
+    {
+      "name": "com_languages.overrider.es5",
+      "type": "script",
+      "uri": "com_languages/overrider-es5.min.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "nomodule": true,
+        "defer": true
+      },
+      "version": "75ee32f5129ea44d63b61ab321e40d90592d8c70"
     }
   ]
 }

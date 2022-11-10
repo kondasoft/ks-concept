@@ -11,9 +11,9 @@ defined('_JEXEC') or die;
 ?>
 
 <a class="navbar-brand p-0 m-0" href="<?php echo $this->baseurl . '/' ; ?>">
-    <?php if ($this->params->get('logo')) : ?>
+    <?php if ($this->params->get('general_logo_media')) : ?>
         <img
-            src="<?php echo Uri::root(true) . '/' . htmlspecialchars($this->params->get('general_logo_media'), ENT_QUOTES) ?>"
+            src="<?php echo htmlspecialchars($this->params->get('general_logo_media'), ENT_QUOTES) ?>"
             alt="<?php echo $sitename; ?>"
             class="img-fluid"
             width="<?php echo htmlspecialchars($this->params->get('general_logo_width', '120')) ?> "

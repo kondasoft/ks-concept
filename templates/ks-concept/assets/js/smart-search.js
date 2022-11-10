@@ -22,7 +22,7 @@ class SmartSearch extends HTMLElement {
 
     async onChange () {
         this.searchTerm = this.input.value.trim()
-        // console.log(searchTerm)
+        // console.log(this.searchTerm)
 
         if (this.searchTerm.length < 2) {
             this.close()
@@ -37,6 +37,7 @@ class SmartSearch extends HTMLElement {
             }
 
             const data = await response.json()
+            // console.log(data)
             this.suggestions = data.suggestions
 
             if (this.suggestions.length) {

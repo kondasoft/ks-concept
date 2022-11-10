@@ -11626,10 +11626,6 @@ body:not(.contentpane) .main-card {
   background-color: var(--toolbar-bg);
 }
 
-.chzn-container-single {
-  width: auto !important;
-}
-
 .input-group input {
   min-width: 220px;
 }
@@ -12496,6 +12492,26 @@ fieldset .alert.alert-info {
 .form-control:focus {
   border-color: #39f;
   box-shadow: 0 0 0 0.2rem #eaeaea;
+}
+.form-control::-webkit-input-placeholder {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+.form-control::-moz-placeholder {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+.form-control:-ms-input-placeholder {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+.form-control::-ms-input-placeholder {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+.form-control::placeholder {
+  font-size: 0.8rem;
+  font-style: italic;
 }
 
 .control-group {

@@ -1,6 +1,7 @@
 # General
 node_modules
 .DS_Store
+dist
 
 # Joomla
 configuration.php

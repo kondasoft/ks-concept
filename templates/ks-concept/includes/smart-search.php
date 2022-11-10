@@ -23,21 +23,8 @@ $searchRoute = RouteHelper::getSearchRoute(null)
         method="get" 
         role="search"
         data-base-url="<?php echo JUri::base(true) ?>"
-        data-search-route="index.php/component/finder/search">
-        <svg 
-            class="icon icon-search" 
-            xmlns="http://www.w3.org/2000/svg" 
-            width="20" 
-            height="20" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            stroke-width="2" 
-            stroke-linecap="round" 
-            stroke-linejoin="round"
-            aria-hidden="true">
-            <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
+        data-search-route="index.php/search">
+        <span class="icon-search icon-white" aria-hidden="true"></span>
         <input 
             class="form-control" 
             type="search" 

@@ -4,7 +4,7 @@
 */
 
 // Theme info in the console
-console.log('Premium Joomla Template Developed By KondaSoft | Learn more at https://www.kondasoft.com')
+console.log('Joomla Template Developed By KondaSoft | Learn more at https://www.kondasoft.com')
 
 // Init Bootstrap tooltips
 document.querySelectorAll('[data-bs-toggle="tooltip"]')

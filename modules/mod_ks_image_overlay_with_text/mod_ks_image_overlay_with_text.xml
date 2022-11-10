@@ -8,14 +8,12 @@
 	<authorEmail>info@kondasoft.com</authorEmail>
 	<authorUrl>www.kondasoft.com</authorUrl>
 	<version>1.0.0</version>
-	<description>Full-width image with overlay text</description>
+	<description></description>
 	<files>
-		<filename module="mod_ks_carousel">mod_ks_image_overlay_with_text.php</filename>
+		<filename module="mod_ks_image_overlay_with_text">mod_ks_image_overlay_with_text.php</filename>
+		<folder>assets</folder>
 		<folder>tmpl</folder>
 	</files>
-	<languages>
-		<language tag="en-GB">language/en-GB/mod_ks_image_overlay_with_text.ini</language>
-	</languages>
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
@@ -79,10 +77,14 @@
 					<option value="btn-primary">Primary</option>
 					<option value="btn-secondary">Secondary</option>
 					<option value="btn-dark">Dark</option>
+					<option value="btn-light">Light</option>
 					<option value="btn-success">Success</option>
 					<option value="btn-danger">Danger</option>
 					<option value="btn-warning">Warning</option>
 					<option value="btn-info">Info</option>
+					<option value="btn-outline-primary">Outline - Primary</option>
+					<option value="btn-outline-secondary">Outline - Secondary</option>
+					<option value="btn-outline-dark">Outline - Dark</option>
 				</field>
 				<field name="spacer_spacing" type="spacer" label="&lt;b&gt;Spacing&lt;/b&gt;" />
 				<field name="padding_top" type="integer" label="Padding Top" description="" first="0" last="20" step="1" default="11" />

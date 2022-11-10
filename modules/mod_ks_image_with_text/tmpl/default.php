@@ -26,12 +26,12 @@ if (!htmlspecialchars($params->get('img'))) {
     id="ks-image-with-text-<?php echo $module->id; ?>"
     class="
         ks-image-with-text
+        <?php echo htmlspecialchars($params->get('bg_color', 'bg-white text-dark')) ?>
         <?php echo 'pt-' . htmlspecialchars($params->get('padding_top', 11)) ?>
         <?php echo 'pb-' . htmlspecialchars($params->get('padding_bottom', 11)) ?>
         <?php echo 'mt-' . htmlspecialchars($params->get('margin_top', 11)) ?>
         <?php echo 'mb-' . htmlspecialchars($params->get('margin_bottom', 11)) ?>
-    "
-    style="background-color: <?php echo htmlspecialchars($params->get('bg_color', '#f5f5f5')) ?>">
+    ">
     <div class="<?php echo htmlspecialchars($params->get('container', 'container')) ?> ">
         <div class="row align-items-lg-center <?php echo htmlspecialchars($params->get('img_align_desktop', '')) ?>">
             <div class="col-lg-6">

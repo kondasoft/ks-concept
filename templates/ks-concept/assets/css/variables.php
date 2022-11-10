@@ -72,7 +72,7 @@ $wa->addInlineStyle('
         --bs-light-rgb: ' . hexToRGB($lightColor) . ';
         --bs-light-lighten-10: ' . colourBrightness($lightColor, 0.9) . ';
         --bs-light-darken-10: ' . colourBrightness($lightColor, -0.1) . ';
-        --bs-light-darken-10: ' . colourBrightness($lightColor, -0.2) . ';
+        --bs-light-darken-20: ' . colourBrightness($lightColor, -0.2) . ';
         --bs-dark: ' . $darkColor . ';
         --bs-dark-rgb: ' . hexToRGB($darkColor) . ';
         --bs-dark-lighten-10: ' . colourBrightness($darkColor, 0.9) . ';

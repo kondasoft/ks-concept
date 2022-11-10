@@ -8,14 +8,12 @@
 	<authorEmail>info@kondasoft.com</authorEmail>
 	<authorUrl>www.kondasoft.com</authorUrl>
 	<version>1.0.0</version>
-	<description>Image slider with captions powered by Bootstrap carousel</description>
+	<description></description>
 	<files>
 		<filename module="mod_ks_carousel">mod_ks_carousel.php</filename>
+		<folder>assets</folder>
 		<folder>tmpl</folder>
 	</files>
-	<languages>
-		<language tag="en-GB">language/en-GB/mod_ks_carousel.ini</language>
-	</languages>
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
@@ -71,19 +69,27 @@
 					<option value="btn-primary">Primary</option>
 					<option value="btn-secondary">Secondary</option>
 					<option value="btn-dark">Dark</option>
+					<option value="btn-light">Light</option>
 					<option value="btn-success">Success</option>
 					<option value="btn-danger">Danger</option>
 					<option value="btn-warning">Warning</option>
 					<option value="btn-info">Info</option>
+					<option value="btn-outline-primary">Outline - Primary</option>
+					<option value="btn-outline-secondary">Outline - Secondary</option>
+					<option value="btn-outline-dark">Outline - Dark</option>
 				</field>
 				<field name="caption_btn_2_color" type="list" label="Button 2 color" description="" default="btn-secondary">
 					<option value="btn-primary">Primary</option>
 					<option value="btn-secondary">Secondary</option>
 					<option value="btn-dark">Dark</option>
+					<option value="btn-light">Light</option>
 					<option value="btn-success">Success</option>
 					<option value="btn-danger">Danger</option>
 					<option value="btn-warning">Warning</option>
 					<option value="btn-info">Info</option>
+					<option value="btn-outline-primary">Outline - Primary</option>
+					<option value="btn-outline-secondary">Outline - Secondary</option>
+					<option value="btn-outline-dark">Outline - Dark</option>
 				</field>
 				<field type="spacer" name="spacer_category" label="&lt;b&gt;CATEGORY&lt;/b&gt;" />
 				<field name="category" type="category" extension="com_content" label="Category" description="Articles within the selected category will be used as slides" />

@@ -75,8 +75,11 @@ const initRunner = () => {
     window.location.href = `${paths ? `${paths.base}/index.php` : window.location.pathname}?option=com_scheduler&view=tasks`;
   };
 
-  modal.addEventListener('show.bs.modal', triggerTaskAndShowOutput);
-  modal.addEventListener('hidden.bs.modal', reloadOnClose);
+  if (modal) {
+    modal.addEventListener('show.bs.modal', triggerTaskAndShowOutput);
+    modal.addEventListener('hidden.bs.modal', reloadOnClose);
+  }
+
   document.removeEventListener('DOMContentLoaded', initRunner);
 };
 

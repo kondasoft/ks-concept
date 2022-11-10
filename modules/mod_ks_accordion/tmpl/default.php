@@ -17,6 +17,7 @@ use Joomla\CMS\HTML\HTMLHelper;
 $model = $app->bootComponent('com_content')->getMVCFactory()->createModel('Articles', 'Site', ['ignore_request' => true]);
 $model->setState('params', $app->getParams());
 $model->setState('filter.category_id', htmlspecialchars($params->get('category')));
+$model->setState('filter.published', 1);
 $model->setState('list.limit', $params->get('limit', 10));
 $articles = $model->getItems();
 // print_r($articles)
@@ -27,26 +28,32 @@ $articles = $model->getItems();
     id="ks-accordion-<?php echo $module->id; ?>"
     class="
         ks-accordion
-        <?php echo htmlspecialchars($params->get('accordion_style', 'accordion-default')) ?>
+        <?php echo htmlspecialchars($params->get('bg_color', 'bg-white text-dark')) ?>
         <?php echo 'pt-' . htmlspecialchars($params->get('padding_top', 11)) ?>
         <?php echo 'pb-' . htmlspecialchars($params->get('padding_bottom', 11)) ?>
         <?php echo 'mt-' . htmlspecialchars($params->get('margin_top', 0)) ?>
         <?php echo 'mb-' . htmlspecialchars($params->get('margin_bottom', 0)) ?>
-    "
-    style="background-color: <?php echo htmlspecialchars($params->get('bg_color', '#ffffff')) ?>">
+    ">
     <div class="container">
         <div class="mx-auto" style="<?php echo 'max-width: ' . htmlspecialchars($params->get('max_width', '600')) . 'px' ?>">
-            <?php if ($params->get('title_show', 1)) : ?>
-                <h2 class="title text-center mb-3 <?php echo htmlspecialchars($params->get('title_size', 'h2')) ?>">
-                    <?php echo htmlspecialchars($params->get('title', 'Accordion (F.A.Q)')); ?>
-                </h2>
-            <?php endif ?>
+            <h2 
+                id="ks-accordion-title-<?php echo $module->id ?>"
+                class="
+                    title text-center mb-3 
+                    <?php echo htmlspecialchars($params->get('title_size', 'h2')) ?>
+                    <?php if (!$params->get('title_show', 1)) : ?>visually-hidden<?php endif ?>
+                ">
+                <?php echo htmlspecialchars($params->get('title', 'Accordion')); ?>
+            </h2>
             <?php if ($params->get('description_show', 1)) : ?>
                 <div class="description text-center mb-7 <?php echo htmlspecialchars($params->get('description_size', 'fs-6')) ?>">
                     <?php echo strip_tags($params->get('description', '<p>Write some optional description for this section.</p>'), '<p><a><br><br/><strong>'); ?>
                 </div>
             <?php endif ?>
-            <div id="accordion-<?php echo $module->id; ?>" class="accordion">
+            <div 
+                id="accordion-<?php echo $module->id; ?>" 
+                class="accordion <?php echo htmlspecialchars($params->get('accordion_style', 'accordion-default')) ?>"  
+                aria-labelledby="ks-accordion-title-<?php echo $module->id ?>">
                 <?php foreach ($articles as $i => &$item) : ?>
                     <div class="accordion-item">
                         <h2 

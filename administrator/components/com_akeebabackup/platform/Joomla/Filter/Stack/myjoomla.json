@@ -1,0 +1,9 @@
+{
+    "core.filters.myjoomla.enabled": {
+        "default": "1",
+        "type": "bool",
+        "title": "COM_AKEEBABACKUP_CONFIG_OPTIONALFILTERS_MYJOOMLA_ENABLED_TITLE",
+        "description": "COM_AKEEBABACKUP_CONFIG_OPTIONALFILTERS_MYJOOMLA_ENABLED_DESCRIPTION",
+        "bold": "1"
+    }
+}

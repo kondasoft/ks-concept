@@ -204,8 +204,6 @@
 
     // attributeChangedCallback(attr, oldValue, newValue) {}
     _proto.connectedCallback = function connectedCallback() {
-      var _this2 = this;
-
       this.button = this.querySelector(this.buttonSelect);
       this.inputElement = this.querySelector(this.input);
       this.buttonClearEl = this.querySelector(this.buttonClear);
@@ -236,28 +234,8 @@
       }
 
       this.inputElement.removeAttribute('readonly');
-      this.inputElement.addEventListener('change', this.validateValue); // Force input revalidation
-
-      _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-        return regeneratorRuntime.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return _this2.validateValue({
-                  target: _this2.inputElement
-                });
-
-              case 2:
-                _this2.updatePreview();
-
-              case 3:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      }))();
+      this.inputElement.addEventListener('change', this.validateValue);
+      this.updatePreview();
     };
 
     _proto.disconnectedCallback = function disconnectedCallback() {
@@ -288,22 +266,22 @@
     };
 
     _proto.modalClose = /*#__PURE__*/function () {
-      var _modalClose = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      var _modalClose = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
-            switch (_context2.prev = _context2.next) {
+            switch (_context.prev = _context.next) {
               case 0:
-                _context2.prev = 0;
-                _context2.next = 3;
+                _context.prev = 0;
+                _context.next = 3;
                 return Joomla.getMedia(Joomla.selectedMediaFile, this.inputElement, this);
 
               case 3:
-                _context2.next = 8;
+                _context.next = 8;
                 break;
 
               case 5:
-                _context2.prev = 5;
-                _context2.t0 = _context2["catch"](0);
+                _context.prev = 5;
+                _context.t0 = _context["catch"](0);
                 Joomla.renderMessages({
                   error: [Joomla.Text._('JLIB_APPLICATION_ERROR_SERVER')]
                 });
@@ -314,10 +292,10 @@
 
               case 10:
               case "end":
-                return _context2.stop();
+                return _context.stop();
             }
           }
-        }, _callee2, this, [[0, 5]]);
+        }, _callee, this, [[0, 5]]);
       }));
 
       function modalClose() {
@@ -343,35 +321,35 @@
     };
 
     _proto.validateValue = /*#__PURE__*/function () {
-      var _validateValue = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(event) {
-        var _this3 = this;
+      var _validateValue = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(event) {
+        var _this2 = this;
 
         var value, hashedUrl, urlParts, rest;
-        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
-            switch (_context3.prev = _context3.next) {
+            switch (_context2.prev = _context2.next) {
               case 0:
                 value = event.target.value;
 
                 if (!(this.validatedUrl === value || value === '')) {
-                  _context3.next = 3;
+                  _context2.next = 3;
                   break;
                 }
 
-                return _context3.abrupt("return");
+                return _context2.abrupt("return");
 
               case 3:
                 if (/^(http(s)?:\/\/).+$/.test(value)) {
                   try {
                     fetch(value).then(function (response) {
                       if (response.status === 200) {
-                        _this3.validatedUrl = value;
+                        _this2.validatedUrl = value;
 
-                        _this3.markValid();
+                        _this2.markValid();
                       } else {
-                        _this3.validatedUrl = value;
+                        _this2.validatedUrl = value;
 
-                        _this3.markInvalid();
+                        _this2.markInvalid();
                       }
                     });
                   } catch (err) {
@@ -394,49 +372,49 @@
                       img.src = URL.createObjectURL(blob);
 
                       img.onload = function () {
-                        _this3.inputElement.value = urlParts[0] + "/" + rest.join('/') + "#joomlaImage://local-" + urlParts[0] + "/" + rest.join('/') + "?width=" + img.width + "&height=" + img.height;
-                        _this3.validatedUrl = urlParts[0] + "/" + rest.join('/') + "#joomlaImage://local-" + urlParts[0] + "/" + rest.join('/') + "?width=" + img.width + "&height=" + img.height;
+                        _this2.inputElement.value = urlParts[0] + "/" + rest.join('/') + "#joomlaImage://local-" + urlParts[0] + "/" + rest.join('/') + "?width=" + img.width + "&height=" + img.height;
+                        _this2.validatedUrl = urlParts[0] + "/" + rest.join('/') + "#joomlaImage://local-" + urlParts[0] + "/" + rest.join('/') + "?width=" + img.width + "&height=" + img.height;
 
-                        _this3.markValid();
+                        _this2.markValid();
                       };
                     } else if (blob.type.includes('audio')) {
-                      _this3.mimeType = blob.type;
-                      _this3.inputElement.value = value;
-                      _this3.validatedUrl = value;
+                      _this2.mimeType = blob.type;
+                      _this2.inputElement.value = value;
+                      _this2.validatedUrl = value;
 
-                      _this3.markValid();
+                      _this2.markValid();
                     } else if (blob.type.includes('video')) {
-                      _this3.mimeType = blob.type;
-                      _this3.inputElement.value = value;
-                      _this3.validatedUrl = value;
+                      _this2.mimeType = blob.type;
+                      _this2.inputElement.value = value;
+                      _this2.validatedUrl = value;
 
-                      _this3.markValid();
+                      _this2.markValid();
                     } else if (blob.type.includes('application/pdf')) {
-                      _this3.mimeType = blob.type;
-                      _this3.inputElement.value = value;
-                      _this3.validatedUrl = value;
+                      _this2.mimeType = blob.type;
+                      _this2.inputElement.value = value;
+                      _this2.validatedUrl = value;
 
-                      _this3.markValid();
+                      _this2.markValid();
                     } else {
-                      _this3.validatedUrl = value;
+                      _this2.validatedUrl = value;
 
-                      _this3.markInvalid();
+                      _this2.markInvalid();
                     }
                   }).catch(function () {
-                    _this3.setValue(value);
+                    _this2.setValue(value);
 
-                    _this3.validatedUrl = value;
+                    _this2.validatedUrl = value;
 
-                    _this3.markInvalid();
+                    _this2.markInvalid();
                   });
                 }
 
               case 4:
               case "end":
-                return _context3.stop();
+                return _context2.stop();
             }
           }
-        }, _callee3, this);
+        }, _callee2, this);
       }));
 
       function validateValue(_x) {
@@ -476,7 +454,7 @@
     };
 
     _proto.updatePreview = function updatePreview() {
-      var _this4 = this;
+      var _this3 = this;
 
       if (['true', 'static'].indexOf(this.preview) === -1 || this.preview === 'false' || !this.previewElement) {
         return;
@@ -520,10 +498,10 @@
                 previewElement = document.createElement('video');
                 var previewElementSource = document.createElement('source');
                 previewElementSource.src = /http/.test(value) ? value : Joomla.getOptions('system.paths').rootFull + value;
-                previewElementSource.type = _this4.mimeType;
+                previewElementSource.type = _this3.mimeType;
                 previewElement.setAttribute('controls', '');
-                previewElement.setAttribute('width', _this4.previewWidth);
-                previewElement.setAttribute('height', _this4.previewHeight);
+                previewElement.setAttribute('width', _this3.previewWidth);
+                previewElement.setAttribute('height', _this3.previewHeight);
                 previewElement.appendChild(previewElementSource);
               }
             },
@@ -531,9 +509,9 @@
               if (supportedExtensions.documents.includes(ext)) {
                 previewElement = document.createElement('object');
                 previewElement.data = /http/.test(value) ? value : Joomla.getOptions('system.paths').rootFull + value;
-                previewElement.type = _this4.mimeType;
-                previewElement.setAttribute('width', _this4.previewWidth);
-                previewElement.setAttribute('height', _this4.previewHeight);
+                previewElement.type = _this3.mimeType;
+                previewElement.setAttribute('width', _this3.previewWidth);
+                previewElement.setAttribute('height', _this3.previewHeight);
               }
             }
           }; // @todo more checks

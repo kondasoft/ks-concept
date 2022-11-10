@@ -6,6 +6,18 @@
   "license": "GPL-2.0-or-later",
   "assets": [
     {
+      "name": "com_cache.admin-cache",
+      "type": "script",
+      "uri": "com_cache/admin-cache-default.min.js",
+      "dependencies": [
+        "com_cache.admin-cache.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "c944be16a682290cc72ebb04a1d47344f6c840d0"
+    },
+    {
       "name": "com_cache.admin-cache.es5",
       "type": "script",
       "uri": "com_cache/admin-cache-default-es5.min.js",
@@ -17,18 +29,6 @@
         "defer": true
       },
       "version": "ef07050322c03d042beec08b585459c782f5ec17"
-    },
-    {
-      "name": "com_cache.admin-cache",
-      "type": "script",
-      "uri": "com_cache/admin-cache-default.min.js",
-      "dependencies": [
-        "com_cache.admin-cache.es5"
-      ],
-      "attributes": {
-        "type": "module"
-      },
-      "version": "c944be16a682290cc72ebb04a1d47344f6c840d0"
     }
   ]
 }

@@ -45,6 +45,18 @@
       "version": "585067fd78a2c2b3d64e41504b25ec6664c4ed41"
     },
     {
+      "name": "com_installer.installer",
+      "type": "script",
+      "uri": "com_installer/installer.min.js",
+      "dependencies": [
+        "com_installer.installer.es5"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "dee1dafd74cd01813ff8a5d76abd5bb3f345a6fd"
+    },
+    {
       "name": "com_installer.installer.es5",
       "type": "script",
       "uri": "com_installer/installer-es5.min.js",
@@ -56,18 +68,6 @@
         "defer": true
       },
       "version": "3b1a6ae274527b143b293bd3f3d869179599a5e9"
-    },
-    {
-      "name": "com_installer.installer",
-      "type": "script",
-      "uri": "com_installer/installer.min.js",
-      "dependencies": [
-        "com_installer.installer.es5"
-      ],
-      "attributes": {
-        "type": "module"
-      },
-      "version": "dee1dafd74cd01813ff8a5d76abd5bb3f345a6fd"
     }
   ]
 }

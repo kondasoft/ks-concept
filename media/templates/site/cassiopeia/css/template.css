@@ -13540,12 +13540,3 @@ body:not(.has-sidebar-right) .site-grid .container-component {
 .tox {
   white-space: nowrap !important;
 }
-
-.chzn-container-single {
-  width: auto !important;
-}
-
-.chzn-container-multi {
-  width: 100% !important;
-  max-width: 240px;
-}

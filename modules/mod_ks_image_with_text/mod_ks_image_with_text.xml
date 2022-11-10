@@ -8,19 +8,27 @@
 	<authorEmail>info@kondasoft.com</authorEmail>
 	<authorUrl>www.kondasoft.com</authorUrl>
 	<version>1.0.0</version>
-	<description>Simple image with text module</description>
+	<description></description>
 	<files>
-		<filename module="mod_ks_carousel">mod_ks_image_with_text.php</filename>
+		<filename module="mod_ks_image_with_text">mod_ks_image_with_text.php</filename>
+		<folder>assets</folder>
 		<folder>tmpl</folder>
 	</files>
-	<languages>
-		<language tag="en-GB">language/en-GB/mod_ks_image_with_text.ini</language>
-	</languages>
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
 				<field name="spacer_general" type="spacer" label="&lt;b&gt;GENERAL&lt;/b&gt;" />
-				<field name="bg_color" type="color" label="Background Color" description="" default="#f5f5f5" />
+				<field name="bg_color" type="list" label="Background Color" description="" default="bg-white text-dark">
+					<option value="bg-white text-dark">White</option>
+					<option value="bg-light text-dark">Light</option>
+					<option value="bg-primary text-white">Primary</option>
+					<option value="bg-secondary text-white">Secondary</option>
+					<option value="bg-dark text-white">Dark</option>
+					<option value="bg-success text-white">Success</option>
+					<option value="bg-danger text-white">Danger</option>
+					<option value="bg-warning text-dark">Warning</option>
+					<option value="bg-info text-white">Info</option>
+				</field>
 				<field name="container" type="list" label="Container" description="" default="container">
 					<option value="">None</option>
 					<option value="container-fluid">Fluid</option>
@@ -80,10 +88,14 @@
 					<option value="btn-primary">Primary</option>
 					<option value="btn-secondary">Secondary</option>
 					<option value="btn-dark">Dark</option>
+					<option value="btn-light">Light</option>
 					<option value="btn-success">Success</option>
 					<option value="btn-danger">Danger</option>
 					<option value="btn-warning">Warning</option>
 					<option value="btn-info">Info</option>
+					<option value="btn-outline-primary">Outline - Primary</option>
+					<option value="btn-outline-secondary">Outline - Secondary</option>
+					<option value="btn-outline-dark">Outline - Dark</option>
 				</field>
 				<field name="spacer_spacing" type="spacer" label="&lt;b&gt;Spacing&lt;/b&gt;" />
 				<field name="padding_top" type="integer" label="Padding Top" description="" first="0" last="20" step="1" default="11" />

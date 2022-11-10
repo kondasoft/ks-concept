@@ -26,12 +26,12 @@ defined('_JEXEC') or die;
     id="ks-newsletter-<?php echo $module->id; ?>"
     class="
         ks-newsletter
+        <?php echo htmlspecialchars($params->get('bg_color', 'bg-white text-dark')) ?>
         <?php echo 'pt-' . htmlspecialchars($params->get('padding_top', 11)) ?>
         <?php echo 'pb-' . htmlspecialchars($params->get('padding_bottom', 11)) ?>
         <?php echo 'mt-' . htmlspecialchars($params->get('margin_top', 0)) ?>
         <?php echo 'mb-' . htmlspecialchars($params->get('margin_bottom', 0)) ?>
-    "
-    style="background-color: <?php echo htmlspecialchars($params->get('bg_color', '#ffffff')) ?>">
+    ">
     <div class="container">
         <div class="mx-auto" style="<?php echo 'max-width: ' . htmlspecialchars($params->get('max_width', '600')) . 'px' ?>">
             <?php if ($params->get('title_show', 1)) : ?>

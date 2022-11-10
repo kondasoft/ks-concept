@@ -32,25 +32,6 @@
     },
     {
       "name": "com_menus.admin-item-edit-container",
-      "type": "style",
-      "uri": "com_menus/admin-item-edit_container.min.css",
-      "version": "2238a0b4db6315635f18e7c0fb672656fe33af89"
-    },
-    {
-      "name": "com_menus.admin-item-edit-container.es5",
-      "type": "script",
-      "uri": "com_menus/admin-item-edit_container-es5.min.js",
-      "dependencies": [
-        "core"
-      ],
-      "attributes": {
-        "nomodule": true,
-        "defer": true
-      },
-      "version": "99134bf56c5d3e1b306552940bcc45e67151dca9"
-    },
-    {
-      "name": "com_menus.admin-item-edit-container",
       "type": "script",
       "uri": "com_menus/admin-item-edit_container.min.js",
       "dependencies": [
@@ -60,25 +41,6 @@
         "type": "module"
       },
       "version": "71a53ab845064ffa0bc42d9840613537454876ec"
-    },
-    {
-      "name": "com_menus.admin-item-edit-modules",
-      "type": "style",
-      "uri": "com_menus/admin-item-edit_modules.min.css",
-      "version": "b36c320480c59a13dbbbf630e1532468e9479734"
-    },
-    {
-      "name": "com_menus.admin-item-edit-modules.es5",
-      "type": "script",
-      "uri": "com_menus/admin-item-edit_modules-es5.min.js",
-      "dependencies": [
-        "core"
-      ],
-      "attributes": {
-        "nomodule": true,
-        "defer": true
-      },
-      "version": "a4fb5e3c7dda4265aaf463a1e77732b8ce4e7c93"
     },
     {
       "name": "com_menus.admin-item-edit-modules",
@@ -106,6 +68,12 @@
       "version": "8b8ab31c026e308b0ccd0089429fcaa9c52cf0ab"
     },
     {
+      "name": "com_menus.admin-item-edit-container",
+      "type": "style",
+      "uri": "com_menus/admin-item-edit_container.min.css",
+      "version": "2238a0b4db6315635f18e7c0fb672656fe33af89"
+    },
+    {
       "name": "com_menus.admin-item-modal",
       "type": "script",
       "uri": "com_menus/admin-item-modal.min.js",
@@ -116,6 +84,12 @@
         "type": "module"
       },
       "version": "3fcc87fe7da835c581b82b02f865999619424be2"
+    },
+    {
+      "name": "com_menus.admin-item-edit-modules",
+      "type": "style",
+      "uri": "com_menus/admin-item-edit_modules.min.css",
+      "version": "b36c320480c59a13dbbbf630e1532468e9479734"
     },
     {
       "name": "com_menus.admin-items-modal.es5",
@@ -191,6 +165,32 @@
         "type": "module"
       },
       "version": "b30e22b8aff084622a6ca0d3a8d87b73b6f944d7"
+    },
+    {
+      "name": "com_menus.admin-item-edit-container.es5",
+      "type": "script",
+      "uri": "com_menus/admin-item-edit_container-es5.min.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "nomodule": true,
+        "defer": true
+      },
+      "version": "99134bf56c5d3e1b306552940bcc45e67151dca9"
+    },
+    {
+      "name": "com_menus.admin-item-edit-modules.es5",
+      "type": "script",
+      "uri": "com_menus/admin-item-edit_modules-es5.min.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "nomodule": true,
+        "defer": true
+      },
+      "version": "a4fb5e3c7dda4265aaf463a1e77732b8ce4e7c93"
     }
   ]
 }

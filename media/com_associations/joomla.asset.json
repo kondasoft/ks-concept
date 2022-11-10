@@ -64,19 +64,6 @@
       "version": "4245ed11ab8ad661d68d219eda321b1ceaa18c99"
     },
     {
-      "name": "com_associations.associations-edit.es5",
-      "type": "script",
-      "uri": "com_associations/associations-edit-es5.min.js",
-      "dependencies": [
-        "core"
-      ],
-      "attributes": {
-        "nomodule": true,
-        "defer": true
-      },
-      "version": "4029d27c4196e1e98c429e8a80b765438d2b4452"
-    },
-    {
       "name": "com_associations.associations-edit",
       "type": "script",
       "uri": "com_associations/associations-edit.min.js",
@@ -94,6 +81,19 @@
       "type": "style",
       "uri": "com_associations/sidebyside.min.css",
       "version": "67b98eb070fc8d47e1ad643f18880f5dc583cad7"
+    },
+    {
+      "name": "com_associations.associations-edit.es5",
+      "type": "script",
+      "uri": "com_associations/associations-edit-es5.min.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "nomodule": true,
+        "defer": true
+      },
+      "version": "4029d27c4196e1e98c429e8a80b765438d2b4452"
     },
     {
       "name": "com_associations.sidebyside",
