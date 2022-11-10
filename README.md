@@ -5,7 +5,7 @@ Joomla Template powered by Boostrap (v5) framework and 15+ years of coding exper
 https://ks-concept.joomla.com
 
 # Download
-Download the full package (templates and modules) and the Clone Installer package from our website (link below).
+Download the full package (templates and modules) and the Clone Installer package from our website.
 https://www.kondasoft.com/products/ks-concept
 
 # Support
