@@ -1,3 +1,9 @@
+Akeeba Backup 9.4.3
+================================================================================
+# [HIGH] Migration from Akeeba Backup 8 always shows an erroneous message that no compatible version has been detected.
+# [MEDIUM] Restoration. Administrator email appears as "undefined" in the Site Setup page
+# [LOW] Restoration: Wrong message about the emial address when the administrator passwords don't match
+
 Akeeba Backup 9.4.2
 ================================================================================
 ! No access control applied in Include and Exclude Information features

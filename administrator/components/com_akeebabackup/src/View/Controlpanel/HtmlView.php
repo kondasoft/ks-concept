@@ -260,6 +260,7 @@ class HtmlView extends BaseHtmlView
 
 		/** @var UpgradeModel $upgradeModel */
 		$upgradeModel                      = $this->getModel('Upgrade');
+		$upgradeModel->init();
 		$this->canUpgradeFromAkeebaBackup8 = in_array(true, $upgradeModel->runCustomHandlerEvent('onNeedsMigration'), true);
 		$this->akeebaBackup8PackageId      = $this->get('akeebaBackup8PackageId');
 

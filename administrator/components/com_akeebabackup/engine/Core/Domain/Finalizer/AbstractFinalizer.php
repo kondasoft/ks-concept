@@ -18,7 +18,7 @@
 namespace Akeeba\Engine\Core\Domain\Finalizer;
 
 use Akeeba\Engine\Core\Domain\Finalization;
-use Psr\Log\LogLevel;
+use Akeeba\Engine\Psr\Log\LogLevel;
 
 /**
  * Abstract implementation of a finalizer class

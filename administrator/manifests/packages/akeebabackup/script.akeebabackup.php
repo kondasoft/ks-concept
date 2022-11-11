@@ -32,7 +32,7 @@ class Pkg_AkeebabackupInstallerScript extends \Joomla\CMS\Installer\InstallerScr
 
 	protected $minimumPhp = '7.4.0';
 
-	protected $minimumJoomla = '4.0.0';
+	protected $minimumJoomla = '4.2.0';
 
 	public function preflight($type, $parent)
 	{

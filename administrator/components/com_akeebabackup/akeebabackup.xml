@@ -8,12 +8,12 @@
 <extension type="component" method="upgrade">
     <name>com_akeebabackup</name>
     <author>Akeeba Ltd</author>
-    <creationDate>2022-10-25</creationDate>
+    <creationDate>2022-11-07</creationDate>
     <copyright>(C) 2006-2021 Nicholas K. Dionysopoulos / Akeeba Ltd</copyright>
     <license>GNU General Public License version 3 or later; see LICENSE.txt</license>
     <authorEmail>no-reply@akeeba.com</authorEmail>
     <authorUrl>www.akeeba.com</authorUrl>
-    <version>9.4.2</version>
+    <version>9.4.3</version>
     <description>COM_AKEEBABACKUP_XML_DESCRIPTION</description>
     <namespace path="src">Akeeba\Component\AkeebaBackup</namespace>
 

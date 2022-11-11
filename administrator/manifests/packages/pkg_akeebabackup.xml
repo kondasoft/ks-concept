@@ -5,12 +5,12 @@
   ~ @license   GNU General Public License version 3, or later
   -->
 
-<extension version="3.9.0" type="package" method="upgrade">
+<extension type="package" method="upgrade">
     <name>pkg_akeebabackup</name>
     <author>Nicholas K. Dionysopoulos</author>
-    <creationDate>2022-10-25</creationDate>
+    <creationDate>2022-11-07</creationDate>
     <packagename>akeebabackup</packagename>
-    <version>9.4.2</version>
+    <version>9.4.3</version>
     <url>https://www.akeeba.com</url>
     <packager>Akeeba Ltd</packager>
     <packagerurl>https://www.akeeba.com</packagerurl>

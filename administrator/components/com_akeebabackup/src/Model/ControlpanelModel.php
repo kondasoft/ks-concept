@@ -778,7 +778,9 @@ class ControlpanelModel extends BaseDatabaseModel
 	 */
 	public function getAkeebaBackup8PackageId(): ?int
 	{
+		/** @var UpgradeModel $upgradeModel */
 		$upgradeModel = $this->getMVCFactory()->createModel('Upgrade', 'Administrator');
+		$upgradeModel->init();
 		$id = $upgradeModel->getExtensionId('pkg_akeeba');
 
 		if (empty($id))

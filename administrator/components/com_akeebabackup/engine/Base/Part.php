@@ -14,7 +14,7 @@ defined('AKEEBAENGINE') || die();
 use Akeeba\Engine\Base\Exceptions\ErrorException;
 use Akeeba\Engine\Factory;
 use Exception;
-use Psr\Log\LogLevel;
+use Akeeba\Engine\Psr\Log\LogLevel;
 use Throwable;
 
 /**

@@ -25,7 +25,7 @@ use Akeeba\Engine\Factory;
 use Akeeba\Engine\Platform;
 use DateTime;
 use Exception;
-use Psr\Log\LogLevel;
+use Akeeba\Engine\Psr\Log\LogLevel;
 
 /**
  * Backup finalization domain

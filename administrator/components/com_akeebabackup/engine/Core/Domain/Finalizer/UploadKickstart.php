@@ -20,7 +20,7 @@ namespace Akeeba\Engine\Core\Domain\Finalizer;
 use Akeeba\Engine\Factory;
 use Akeeba\Engine\Platform;
 use Exception;
-use Psr\Log\LogLevel;
+use Akeeba\Engine\Psr\Log\LogLevel;
 
 /**
  * Uploads Kickstart using the post-processing engine

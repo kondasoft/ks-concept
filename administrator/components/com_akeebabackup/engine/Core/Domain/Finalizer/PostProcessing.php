@@ -22,7 +22,7 @@ use Akeeba\Engine\Platform;
 use Akeeba\Engine\Postproc\Base;
 use Akeeba\Engine\Postproc\PostProcInterface;
 use Exception;
-use Psr\Log\LogLevel;
+use Akeeba\Engine\Psr\Log\LogLevel;
 
 /**
  * Performs any necessary post-processing (remote file uploading) still pending.

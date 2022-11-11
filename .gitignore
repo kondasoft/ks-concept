@@ -5,3 +5,4 @@ dist
 
 # Joomla
 configuration.php
+*.jpa

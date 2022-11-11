@@ -18,7 +18,7 @@ use Akeeba\Engine\Configuration;
 use Akeeba\Engine\Factory;
 use Akeeba\Engine\Platform;
 use Exception;
-use Psr\Log\LogLevel;
+use Akeeba\Engine\Psr\Log\LogLevel;
 use RuntimeException;
 
 /* Windows system detection */

@@ -36,7 +36,6 @@ class UpgradeController extends BaseController
 
 		/** @var UpgradeModel $model */
 		$model = $this->getModel('Upgrade', 'Administrator');
-
 		$model->init();
 
 		$results = $model->runCustomHandlerEvent('onMigrateSettings');

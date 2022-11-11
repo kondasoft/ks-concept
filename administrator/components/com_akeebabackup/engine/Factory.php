@@ -19,7 +19,6 @@ use Akeeba\Engine\Core\Timer;
 use Akeeba\Engine\Driver\Base;
 use Akeeba\Engine\Postproc\PostProcInterface;
 use Akeeba\Engine\Util\ConfigurationCheck;
-use Akeeba\Engine\Util\CRC32;
 use Akeeba\Engine\Util\Encrypt;
 use Akeeba\Engine\Util\EngineParameters;
 use Akeeba\Engine\Util\FactoryStorage;
